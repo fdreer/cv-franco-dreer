@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<nav class="main-navbar">
+	<section>
+		<article>
+			<!-- Logo del negocio -->
+			<h3>Logo</h3>
+			<!-- <Image
+				src="/images/bird-in-public-folder.jpg"
+				alt="Un pájaro."
+				width="50"
+				height="50"
+			/> -->
+		</article>
+		<article>
+			<a href="/">Home</a>
+			<a href="/order">Pedido</a>
+		</article>
+	</section>
+</nav>
+
+<!-- Estilos específicos de la barra de navegación -->
+<style>
+	nav {
+		background-color: var(--mainColor);
+		padding: 20px;
+	}
+	section {
+		max-width: 980px;
+		margin: 0 auto;
+
+		display: flex;
+		justify-content: space-between;
+	}
+</style>

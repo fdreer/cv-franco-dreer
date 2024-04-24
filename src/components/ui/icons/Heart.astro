@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets'
+import heart from '../../../../public/pixel-heart.svg'
+
+interface Props {
+	size: 'small' | 'medium' | 'big'
+}
+
+const { size } = Astro.props
+---
+
+<Image src={heart} alt="Pixel heart" class={size} />
+
+<style>
+	.small {
+		width: 24px;
+		height: 24px;
+	}
+	.medium {
+		font-size: 32px;
+	}
+	.big {
+		font-size: 48px;
+	}
+</style>

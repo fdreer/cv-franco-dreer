@@ -82,9 +82,18 @@ const textColor = '#222'
 
 	main {
 		flex-grow: 1;
-		max-width: 710px;
-		margin: 0 auto;
-		padding: 20px 0;
+		/* max-width: 1200px; */
+		width: 100%;
+		/* margin: 0 auto; */
+		margin: auto;
+		padding: 4rem;
+		padding-bottom: 0;
+	}
+	@media (width <= 700px) {
+		main {
+			padding: 2rem;
+			padding-bottom: 0;
+		}
 	}
 	h1,
 	h2,
@@ -99,6 +108,14 @@ const textColor = '#222'
 	}
 	ul {
 		padding: 0;
+	}
+	section {
+		max-width: 700px;
+		margin: 0 auto 48px;
+
+		h2 {
+			margin-bottom: 10px;
+		}
 	}
 	code {
 		font-family:

@@ -1,0 +1,22 @@
+---
+interface Props {
+	target: string
+	title: string
+}
+
+const { target, title } = Astro.props
+---
+
+<a href={target} target="_blank" title={title}>
+	<slot />
+</a>
+
+<style>
+	a {
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		border: var(--mainColor) 1px solid;
+		box-shadow: 5px 5px 0px -3px var(--mainColor);
+	}
+</style>

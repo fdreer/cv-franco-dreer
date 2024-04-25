@@ -5,6 +5,7 @@ import GitHub from '../components/ui/icons/GitHub.astro'
 import LinkedIn from '../components/ui/icons/LinkedIn.astro'
 import { Image } from 'astro:assets'
 import myPhoto from '../assets/foto.jpeg'
+import SocialNetworkButton from '../components/SocialNetworkButton.astro'
 
 const links = [
 	{
@@ -31,30 +32,51 @@ const links = [
 
 <Layout title="Cv de Franco Dreer">
 	<section class="info">
-		<article>
+		<article class="me">
 			<h1>Franco Dreer</h1>
-			<h2>Contador Público con horientación a al desarrollo de software</h2>
+			<h2>
+				Estudiante de contador público con orientación al desarrollo de software
+			</h2>
 			<span>🌐 Salta Capital, Argentina</span>
 			<footer>
 				{
 					links.map(({ title, target, Icon }) => (
-						<a href={target} target="_blank" title={title} class="">
-							{<Icon />}
-						</a>
+						<SocialNetworkButton target={target} title={title}>
+							<Icon />
+						</SocialNetworkButton>
 					))
 				}
 			</footer>
 		</article>
 		<article>
-			<figure class="my-photo">
-				<Image
-					src={myPhoto}
-					alt="Una descripción de mi imagen."
-					width="130"
-					height="130"
-				/>
-			</figure>
+			<Image
+				src={myPhoto}
+				alt="Una descripción de mi imagen."
+				class="my-photo"
+			/>
 		</article>
+	</section>
+	<section>
+		<h2>Perfil profesional</h2>
+		<p>Estudiante entusiasta de la tecnología y los negocios</p>
+	</section>
+	<section>
+		<h2>Formación</h2>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nulla
+			corrupti perspiciatis cumque nam aspernatur, expedita magni aliquid
+			officia ad voluptas? Ex dolorum veniam excepturi nostrum, facere voluptas
+			minima sint.
+		</p>
+	</section>
+	<section>
+		<h2>Sobre mí</h2>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nulla
+			corrupti perspiciatis cumque nam aspernatur, expedita magni aliquid
+			officia ad voluptas? Ex dolorum veniam excepturi nostrum, facere voluptas
+			minima sint.
+		</p>
 	</section>
 </Layout>
 
@@ -64,9 +86,35 @@ const links = [
 		justify-content: space-between;
 		align-items: center;
 	}
+	@media (width <= 700px) {
+		.info {
+			flex-direction: column-reverse;
+			gap: 1rem;
+		}
+		.me {
+			align-items: center;
+			text-align: center;
+		}
+	}
+	.me {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	h2 {
+		text-wrap: balance;
+	}
 	.my-photo {
 		/* Ajustar tamanio al de la imagen */
 		border: var(--mainColor) 2px solid;
 		box-shadow: 9px 9px 0px -3px var(--mainColor);
+		width: 120px;
+		height: 120px;
+	}
+	footer {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10px;
 	}
 </style>

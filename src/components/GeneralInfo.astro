@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets'
+import SocialNetworkButton from './SocialNetworkButton.astro'
+import GitHub from './ui/icons/GitHub.astro'
+import LinkedIn from './ui/icons/LinkedIn.astro'
+import Mail from './ui/icons/Mail.astro'
+import myPhoto from '../assets/foto.jpeg'
+import Container from './ui/Container.astro'
+import MapPin from './ui/icons/MapPin.astro'
+
+const links = [
+	{
+		title: 'Visitar perfil de Franco Dreer en LinkedIn',
+		target: 'https://www.linkedin.com/in/francodreer',
+		Icon: LinkedIn
+	},
+	// TODO: cada vez que se haga click, se copia el mail. No se redirige
+	{
+		title: 'Enviar correo a francodreer@gmail.com',
+		target: 'mailto:francodreer@gmail.com',
+		Icon: Mail
+	},
+	{
+		title: 'Visitar perfil de Franco Dreer en GitHub',
+		target: 'https://github.com/fdreer',
+		Icon: GitHub
+	}
+] as {
+	title: string
+	target: string
+	Icon: any
+}[]
+---
+
+<Container>
+	<section class="info">
+		<article class="me">
+			<h1>Franco Dreer</h1>
+			<h3>
+				Estudiante de contador público con orientación al desarrollo de software
+			</h3>
+
+			<span><MapPin /> Salta Capital, Argentina</span>
+			<footer>
+				{
+					links.map(({ title, target, Icon }) => (
+						<SocialNetworkButton target={target} title={title}>
+							<Icon />
+						</SocialNetworkButton>
+					))
+				}
+			</footer>
+		</article>
+		<article>
+			<Image
+				src={myPhoto}
+				alt="Una descripción de mi imagen."
+				class="my-photo"
+			/>
+		</article>
+	</section>
+</Container>
+
+<style>
+	h1 {
+		font-size: 32px;
+	}
+	h3 {
+		font-size: 18px;
+		font-weight: 500;
+	}
+	span {
+		font-size: 14px;
+		display: flex;
+		align-items: end;
+		gap: 5px;
+	}
+	.info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.me {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	@media (width <= 700px) {
+		.info {
+			flex-direction: column-reverse;
+			gap: 1rem;
+		}
+		.me {
+			align-items: center;
+			text-align: center;
+		}
+	}
+	.my-photo {
+		border: var(--mainColor) 2px solid;
+		box-shadow: 5px 5px 0px -3px var(--mainColor);
+		width: 120px;
+		height: 120px;
+	}
+	footer {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10px;
+	}
+</style>

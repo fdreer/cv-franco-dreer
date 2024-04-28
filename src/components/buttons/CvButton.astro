@@ -1,0 +1,32 @@
+---
+import Cv from '@/icons/Cv.astro'
+import Square from '../ui/Square.astro'
+
+import '@/components/buttons/styles.css'
+---
+
+<Square>
+	<a
+		class="social-button"
+		href="https://drive.google.com/file/d/1tchMOGRJqqcNPyvU24_feBb2jQXgyiUy/view?usp=sharing"
+		target="_blank"
+		title="Descargar Cv de Franco Dreer"
+	>
+		<Cv />
+	</a>
+</Square>
+
+<style>
+	.social-button {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 5px;
+		cursor: pointer;
+		border: none;
+		background: none;
+		color: inherit;
+	}
+</style>

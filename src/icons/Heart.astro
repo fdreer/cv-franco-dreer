@@ -1,7 +1,4 @@
 ---
-import { Image } from 'astro:assets'
-import heart from '../../../../public/pixel-heart.svg'
-
 interface Props {
 	size: 'small' | 'medium' | 'big'
 }
@@ -9,8 +6,7 @@ interface Props {
 const { size } = Astro.props
 ---
 
-<!-- TODO: Image a svg -->
-<Image src={heart} alt="Pixel heart" class={size} />
+<img src="/pixel-heart.svg" alt="Pixel heart" class={size} />
 
 <style>
 	.small {

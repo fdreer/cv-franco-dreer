@@ -6,10 +6,6 @@ interface Props {
 }
 
 const { title } = Astro.props
-const mainColor = 'rgba(17, 24, 39, 1)'
-const secondaryColor = 'rgba(167, 139, 250, 1)'
-const backgroundColor = '#dcdcdc'
-const textColor = '#222'
 ---
 
 <!doctype html>
@@ -32,13 +28,15 @@ const textColor = '#222'
 		<Footer />
 	</body>
 </html>
-<style
-	is:global
-	define:vars={{ mainColor, secondaryColor, textColor, backgroundColor }}
->
+<style is:global>
 	:root {
-		background-color: var(--backgroundColor);
-		color: var(--textColor);
+		--background-color: #dcdcdc;
+		--color-text: #222;
+		--color-primary: rgba(17, 24, 39, 1);
+		--color-secondary: rgba(167, 139, 250, 1);
+
+		background-color: var(--background-color);
+		color: var(--color-text);
 		font-family:
 			system-ui,
 			-apple-system,

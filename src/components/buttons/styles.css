@@ -1,0 +1,12 @@
+.social-button {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	cursor: pointer;
+	border: none;
+	background: none;
+	color: inherit;
+}

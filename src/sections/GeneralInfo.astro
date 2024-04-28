@@ -1,13 +1,12 @@
 ---
 import Container from '@/components/ui/Container.astro'
-import Square from '@/components/ui/Square.astro'
-import Cv from '@/icons/Cv.astro'
-import GitHub from '@/icons/GitHub.astro'
-import LinkedIn from '@/icons/LinkedIn.astro'
-import Mail from '@/icons/Mail.astro'
 import MapPin from '@/icons/MapPin.astro'
 import { Image } from 'astro:assets'
-import myPhoto from '@/assets/foto.jpeg'
+import myPhoto from '@/assets/img/foto.jpeg'
+import LinkedInButton from '@/components/buttons/LinkedInButton.astro'
+import MailButton from '@/components/buttons/MailButton/MailButton.astro'
+import GitHubButton from '@/components/buttons/GitHubButton.astro'
+import CvButton from '@/components/buttons/CvButton.astro'
 ---
 
 <Container>
@@ -20,41 +19,10 @@ import myPhoto from '@/assets/foto.jpeg'
 
 			<span><MapPin /> Salta Capital, Argentina</span>
 			<footer>
-				<Square>
-					<a
-						class="social-button"
-						href="https://www.linkedin.com/in/francodreer"
-						target="_blank"
-						title="Visitar perfil de Franco Dreer en LinkedIn"
-					>
-						<LinkedIn />
-					</a>
-				</Square>
-				<Square>
-					<button type="button" class="social-button">
-						<Mail />
-					</button>
-				</Square>
-				<Square>
-					<a
-						class="social-button"
-						href="https://github.com/fdreer"
-						target="_blank"
-						title="Visitar perfil de Franco Dreer en GitHub"
-					>
-						<GitHub />
-					</a>
-				</Square>
-				<Square>
-					<a
-						class="social-button"
-						href="https://drive.google.com/file/d/1tchMOGRJqqcNPyvU24_feBb2jQXgyiUy/view?usp=sharing"
-						target="_blank"
-						title="Descargar Cv de Franco Dreer"
-					>
-						<Cv />
-					</a>
-				</Square>
+				<LinkedInButton />
+				<MailButton />
+				<GitHubButton />
+				<CvButton />
 			</footer>
 		</article>
 		<article>
@@ -62,16 +30,6 @@ import myPhoto from '@/assets/foto.jpeg'
 		</article>
 	</section>
 </Container>
-
-<script>
-	const button = document.querySelector('button.social-button')
-
-	const handleClick = () => {
-		navigator.clipboard.writeText('francodreer@gmail.com')
-	}
-
-	button?.addEventListener('click', handleClick)
-</script>
 
 <style>
 	h1 {
@@ -117,17 +75,6 @@ import myPhoto from '@/assets/foto.jpeg'
 		align-items: center;
 		justify-content: flex-start;
 		gap: 10px;
-	}
-	.social-button {
-		width: 40px;
-		height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 5px;
-		cursor: pointer;
-		border: none;
-		background: none;
-		color: inherit;
+		position: relative;
 	}
 </style>

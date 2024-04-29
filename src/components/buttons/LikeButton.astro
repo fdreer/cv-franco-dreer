@@ -1,5 +1,4 @@
 ---
-import Like from '@/icons/Like.astro'
 import { Likes, db, eq } from 'astro:db'
 
 const [likes] = await db
@@ -11,101 +10,102 @@ const [likes] = await db
 const numberLikes = likes.number
 ---
 
-<button class="Btn">
-	<span class="leftContainer">
-		<Like />
-		<span class="like">Like</span>
-	</span>
-	<span class="likeCount">{numberLikes}</span>
-</button>
+<div class="like-button">
+	<div class="heart-bg">
+		<div class="heart-icon"></div>
+	</div>
+	<div class="likes-amount">{numberLikes}</div>
+</div>
 
 <script>
 	import { $ } from '@/lib/dom-selector'
-	// TODO:
-	// 1. Recuperar del localStorage si tiene un like o no
-	// 2. Llamar a endpoint para disminuir el like si ya tiene uno
-	// 3. Hacer lo de arriba para el caso que no tenga like. 🆗
-	const likeBtn = $('.Btn')
-	const numberLikes = $('.likeCount')
+	import { isLiked, setLike, removeLike } from '@/lib/local-storage'
 
-	likeBtn?.addEventListener('click', async () => {
-		const res = await fetch('/api/likes', {
-			method: 'POST'
-		})
+	const intialLikeState = isLiked()
 
-		const data = await res.json()
+	const likeBtn = $('.like-button')
+	const numberLikes = $('.likes-amount')
+	const heartIcon = $('.heart-icon')
 
-		if (!numberLikes) {
+	if (intialLikeState === 'true') {
+		heartIcon?.classList.add('liked')
+	}
+
+	if (likeBtn && numberLikes) {
+		likeBtn.addEventListener('click', async () => {
+			const like = isLiked()
+			if (!like) {
+				setLike()
+				heartIcon?.classList.add('liked')
+				numberLikes.textContent = `${Number(numberLikes.textContent) + 1}`
+
+				const res = await fetch('/api/likes', {
+					method: 'POST'
+				})
+				const data = await res.json()
+				return
+			}
+
+			removeLike()
+			heartIcon?.classList.remove('liked')
+			numberLikes.textContent = `${Number(numberLikes.textContent) - 1}`
+
+			const res = await fetch('/api/likes', {
+				method: 'PATCH'
+			})
+			const data = await res.json()
 			return
-		}
-
-		numberLikes.textContent = `${data.newLikes}`
-	})
+		})
+	}
 </script>
 
 <style>
-	.Btn {
-		width: 140px;
-		height: 35px;
+	.like-button {
 		display: flex;
 		align-items: center;
-		justify-content: flex-start;
-		border: none;
-		border-radius: 5px;
-		overflow: hidden;
-		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.089);
+	}
+	.like-button .heart-icon {
+		height: 100px;
+		width: 100px;
+		background: url('../../assets/img/heart.png');
+		background-position: left;
 		cursor: pointer;
-		background-color: transparent;
-		padding: 0;
-	}
-
-	.leftContainer {
-		width: 60%;
-		height: 100%;
-		background-color: var(--color-primary);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 8px;
-	}
-
-	.leftContainer .like {
-		color: white;
-		font-weight: 600;
-	}
-
-	.likeCount {
-		width: 40%;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--color-text);
-		font-weight: 600;
-		position: relative;
-		background-color: white;
-	}
-
-	.likeCount::before {
-		height: 8px;
-		width: 8px;
 		position: absolute;
-		content: '';
-		background-color: rgb(255, 255, 255);
-		transform: rotate(45deg);
-		left: -4px;
 	}
 
-	.Btn:hover .leftContainer {
-		background-color: #1d4292;
+	.like-button .heart-icon.liked {
+		animation: like-anim 0.7s steps(28) forwards;
 	}
 
-	.Btn:active .leftContainer {
-		background-color: #072b7a;
+	@keyframes like-anim {
+		to {
+			background-position: right;
+		}
 	}
 
-	.Btn:active .leftContainer svg {
-		transform: scale(1.15);
-		transform-origin: top;
+	.like-button .heart-bg {
+		background: rgba(255, 192, 200, 0);
+		border-radius: 50%;
+		height: 45px;
+		width: 45px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 100ms ease;
+	}
+
+	.like-button .heart-bg:hover {
+		background: rgba(255, 192, 200, 0.7);
+	}
+
+	.like-button {
+		display: flex;
+		align-items: center;
+	}
+
+	.like-button .likes-amount {
+		font-size: 1.5rem;
+		color: var(--color-text);
+		font-weight: 700;
 	}
 </style>

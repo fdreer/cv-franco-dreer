@@ -31,3 +31,23 @@ export const POST: APIRoute = async () => {
 
 	return new Response(JSON.stringify({ newLikes: newLikes[0].updateLikes }))
 }
+
+export const PATCH: APIRoute = async () => {
+	const [likes] = await db
+		.select({
+			id: Likes.id,
+			number: Likes.number
+		})
+		.from(Likes)
+		.where(eq(Likes.id, 'cv-franco'))
+
+	const newLikes = await db
+		.update(Likes)
+		.set({
+			number: likes.number - 1
+		})
+		.where(eq(Likes.id, 'cv-franco'))
+		.returning({ updateLikes: Likes.number })
+
+	return new Response(JSON.stringify({ newLikes: newLikes[0].updateLikes }))
+}

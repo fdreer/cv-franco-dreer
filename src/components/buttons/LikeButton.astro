@@ -1,0 +1,111 @@
+---
+import Like from '@/icons/Like.astro'
+import { Likes, db, eq } from 'astro:db'
+
+const [likes] = await db
+	.select({
+		number: Likes.number
+	})
+	.from(Likes)
+	.where(eq(Likes.id, 'cv-franco'))
+const numberLikes = likes.number
+---
+
+<button class="Btn">
+	<span class="leftContainer">
+		<Like />
+		<span class="like">Like</span>
+	</span>
+	<span class="likeCount">{numberLikes}</span>
+</button>
+
+<script>
+	import { $ } from '@/lib/dom-selector'
+	// TODO:
+	// 1. Recuperar del localStorage si tiene un like o no
+	// 2. Llamar a endpoint para disminuir el like si ya tiene uno
+	// 3. Hacer lo de arriba para el caso que no tenga like. 🆗
+	const likeBtn = $('.Btn')
+	const numberLikes = $('.likeCount')
+
+	likeBtn?.addEventListener('click', async () => {
+		const res = await fetch('/api/likes', {
+			method: 'POST'
+		})
+
+		const data = await res.json()
+
+		if (!numberLikes) {
+			return
+		}
+
+		numberLikes.textContent = `${data.newLikes}`
+	})
+</script>
+
+<style>
+	.Btn {
+		width: 140px;
+		height: 35px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		border: none;
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.089);
+		cursor: pointer;
+		background-color: transparent;
+		padding: 0;
+	}
+
+	.leftContainer {
+		width: 60%;
+		height: 100%;
+		background-color: var(--color-primary);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+	}
+
+	.leftContainer .like {
+		color: white;
+		font-weight: 600;
+	}
+
+	.likeCount {
+		width: 40%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--color-text);
+		font-weight: 600;
+		position: relative;
+		background-color: white;
+	}
+
+	.likeCount::before {
+		height: 8px;
+		width: 8px;
+		position: absolute;
+		content: '';
+		background-color: rgb(255, 255, 255);
+		transform: rotate(45deg);
+		left: -4px;
+	}
+
+	.Btn:hover .leftContainer {
+		background-color: #1d4292;
+	}
+
+	.Btn:active .leftContainer {
+		background-color: #072b7a;
+	}
+
+	.Btn:active .leftContainer svg {
+		transform: scale(1.15);
+		transform-origin: top;
+	}
+</style>

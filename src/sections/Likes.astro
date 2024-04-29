@@ -1,0 +1,20 @@
+---
+import Container from '@/components/ui/Container.astro'
+import LikeButton from '@/components/buttons/LikeButton.astro'
+---
+
+<Container>
+	<section>
+		<h3>Personas que les gustó mi CV</h3>
+		<br />
+		<LikeButton />
+	</section>
+</Container>
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+</style>

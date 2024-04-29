@@ -1,0 +1,22 @@
+---
+interface Props {
+	size: 'small' | 'medium' | 'big'
+}
+
+const { size } = Astro.props
+---
+
+<img src="/pixel-heart.svg" alt="Pixel heart" class={size} />
+
+<style>
+	.small {
+		width: 20px;
+		height: 20px;
+	}
+	.medium {
+		/* font-size: 32px; */
+	}
+	.big {
+		/* font-size: 48px; */
+	}
+</style>

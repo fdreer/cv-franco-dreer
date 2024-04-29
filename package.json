@@ -3,16 +3,16 @@
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "astro dev --remote",
-		"start": "astro dev",
-		"build": "astro check && astro build --remote",
+		"dev": "astro dev",
+		"start": "astro dev  --remote",
+		"build": "astro build --remote",
 		"preview": "astro preview",
 		"astro": "astro"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.5.10",
 		"@astrojs/cloudflare": "^10.2.4",
-		"@astrojs/db": "^0.10.6",
+		"@astrojs/db": "0.8.8",
 		"@astrojs/react": "^3.3.1",
 		"@types/react": "^18.2.79",
 		"@types/react-dom": "^18.2.25",

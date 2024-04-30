@@ -5,6 +5,10 @@ import db from '@astrojs/db'
 
 // https://astro.build/config
 export default defineConfig({
+	build: {
+		inlineStylesheets: 'always'
+	},
+	compressHTML: true,
 	integrations: [react(), db()],
 	output: 'server',
 	adapter: cloudflare()

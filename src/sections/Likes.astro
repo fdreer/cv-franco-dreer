@@ -5,16 +5,31 @@ import LikeButton from '@/components/buttons/LikeButton.astro'
 
 <Container>
 	<section>
-		<h3>Personas que les gustó mi CV</h3>
-		<br />
-		<LikeButton />
+		<article>
+			<h3>Dejá tu Like</h3>
+			<LikeButton />
+		</article>
 	</section>
 </Container>
 
 <style>
 	section {
 		display: flex;
+		justify-content: center;
+	}
+	h3 {
+		font-size: 1.5rem;
+		font-weight: 500;
+	}
+	article {
+		display: flex;
 		flex-direction: column;
+		justify-content: center;
+		text-align: center;
 		align-items: center;
+		width: 200px;
+
+		border: var(--color-primary) 1px solid;
+		box-shadow: 5px 5px 0px -3px var(--color-primary);
 	}
 </style>

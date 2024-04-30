@@ -1,0 +1,19 @@
+---
+import Square from '@/components/ui/Square.astro'
+import Mail from '@/icons/Mail.astro'
+---
+
+<Square>
+	<button type="button" class="social-button" id="email-btn">
+		<Mail />
+	</button>
+</Square>
+
+<script>
+	import { $ } from '@/lib/dom-selector'
+
+	const emailBtn = $('#email-btn')
+	emailBtn?.addEventListener('click', () => {
+		navigator.clipboard.writeText('francodreer@gmail.com')
+	})
+</script>

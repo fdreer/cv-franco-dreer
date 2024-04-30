@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config'
-import react from '@astrojs/react'
 import cloudflare from '@astrojs/cloudflare'
 import db from '@astrojs/db'
 
@@ -9,7 +8,7 @@ export default defineConfig({
 		inlineStylesheets: 'always'
 	},
 	compressHTML: true,
-	integrations: [react(), db()],
+	integrations: [db()],
 	output: 'server',
 	adapter: cloudflare()
 })

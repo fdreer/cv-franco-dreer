@@ -11,9 +11,11 @@ import Mail from '@/icons/Mail.astro'
 
 <script>
 	import { $ } from '@/lib/dom-selector'
+	import { toast } from '@/lib/toast'
 
 	const emailBtn = $('#email-btn')
 	emailBtn?.addEventListener('click', () => {
 		navigator.clipboard.writeText('francodreer@gmail.com')
+		toast('Email copiado en el portapapeles')
 	})
 </script>

@@ -14,7 +14,7 @@
 		"@astrojs/cloudflare": "^10.2.4",
 		"@astrojs/db": "0.8.8",
 		"astro": "^4.6.4",
-		"sonner": "^1.4.41",
+		"notyf": "^3.10.0",
 		"typescript": "^5.4.5"
 	}
 }

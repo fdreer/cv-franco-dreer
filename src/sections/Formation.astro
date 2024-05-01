@@ -4,7 +4,7 @@ import myFormation from '../../public/data/my-formation.json'
 ---
 
 <Container>
-	<section>
+	<section class="data">
 		<h2>Formación</h2>
 		<ul>
 			{
@@ -31,9 +31,12 @@ import myFormation from '../../public/data/my-formation.json'
 </Container>
 
 <style>
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
 	li {
-		margin-bottom: 20px;
-
 		div {
 			margin-bottom: 5px;
 

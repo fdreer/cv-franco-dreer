@@ -4,7 +4,7 @@ import myCourses from '../../public/data/my-courses.json'
 ---
 
 <Container>
-	<section>
+	<section class="data">
 		<h2>Cursos</h2>
 		<ul>
 			{
@@ -30,9 +30,12 @@ import myCourses from '../../public/data/my-courses.json'
 </Container>
 
 <style>
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
 	li {
-		margin-bottom: 20px;
-
 		div {
 			margin-bottom: 5px;
 

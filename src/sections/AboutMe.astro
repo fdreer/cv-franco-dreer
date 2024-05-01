@@ -1,0 +1,39 @@
+---
+import Container from '@/components/ui/Container.astro'
+import aboutMe from '../../public/data/about-me.json'
+---
+
+<Container>
+	<section>
+		<h2>Sobre mí</h2>
+		<ul>
+			{
+				aboutMe.map(({ title, description }) => {
+					return (
+						<li>
+							<h3>{title}</h3>
+							{description && <p>{description}</p>}
+						</li>
+					)
+				})
+			}
+		</ul>
+	</section>
+</Container>
+
+<style>
+	li {
+		margin-bottom: 20px;
+
+		h3 {
+			font-size: 1.25rem;
+			font-weight: 500;
+		}
+
+		span {
+			font-weight: 500;
+			font-size: 0.9rem;
+			color: #666;
+		}
+	}
+</style>

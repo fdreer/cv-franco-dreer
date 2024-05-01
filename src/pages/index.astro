@@ -1,30 +1,18 @@
 ---
-import Container from '@/components/ui/Container.astro'
 import Layout from '@/layouts/Layout.astro'
 import GeneralInfo from '@/sections/GeneralInfo.astro'
 import Likes from '@/sections/Likes.astro'
-import WorkExperience from '@/sections/WorkExperience.astro'
+import Formation from '@/sections/Formation.astro'
+import ProfessionalProfile from '@/sections/ProfessionalProfile.astro'
+import AboutMe from '@/sections/AboutMe.astro'
+import Courses from '@/sections/Courses.astro'
 ---
 
 <Layout title="Cv de Franco Dreer">
 	<GeneralInfo />
-	<Container>
-		<section>
-			<h2>Perfil profesional</h2>
-			<p>Estudiante entusiasta de la tecnología y los negocios.</p>
-		</section>
-	</Container>
-	<WorkExperience />
-	<Container>
-		<section>
-			<h2>Sobre mí</h2>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nulla
-				corrupti perspiciatis cumque nam aspernatur, expedita magni aliquid
-				officia ad voluptas? Ex dolorum veniam excepturi nostrum, facere
-				voluptas minima sint.
-			</p>
-		</section>
-	</Container>
+	<ProfessionalProfile />
+	<Formation />
+	<Courses />
+	<AboutMe />
 	<Likes />
 </Layout>

@@ -1,0 +1,52 @@
+---
+import Container from '@/components/ui/Container.astro'
+import myFormation from '../../public/data/my-formation.json'
+---
+
+<Container>
+	<section>
+		<h2>Formación</h2>
+		<ul>
+			{
+				myFormation.map(({ title, institution, description, timeFrame }) => {
+					return (
+						<li>
+							<div>
+								<h3>
+									{title}, {institution}
+								</h3>
+								{timeFrame ? (
+									<span>
+										{timeFrame.startDate} - {timeFrame.endDate}
+									</span>
+								) : null}
+							</div>
+							{description && <p>{description}</p>}
+						</li>
+					)
+				})
+			}
+		</ul>
+	</section>
+</Container>
+
+<style>
+	li {
+		margin-bottom: 20px;
+
+		div {
+			margin-bottom: 5px;
+
+			h3 {
+				font-size: 1.25rem;
+				font-weight: 500;
+			}
+
+			span {
+				font-weight: 500;
+				font-size: 0.9rem;
+				color: #666;
+			}
+		}
+	}
+</style>

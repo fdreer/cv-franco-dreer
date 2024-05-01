@@ -1,0 +1,23 @@
+[
+	{
+		"title": "Contador Público",
+		"timeFrame": {
+			"startDate": "Febrero 2018",
+			"endDate": "En curso"
+		},
+		"institution": "Universidad Católica de Salta",
+		"description": "Próximo a recibirse"
+	},
+	{
+		"title": "Certified Tech Developer",
+		"timeFrame": {
+			"startDate": "Febrero 2022",
+			"endDate": "Septiembre 2023"
+		},
+		"institution": "Digital House"
+	},
+	{
+		"title": "Bachiller en Ciencias Económicas",
+		"institution": "Colegio Belgrano"
+	}
+]

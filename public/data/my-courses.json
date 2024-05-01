@@ -1,0 +1,14 @@
+[
+	{
+		"title": "Curso de Inglés B1",
+		"institution": "Universidad Católica de Salta",
+		"timeFrame": {
+			"startDate": "Febrero 2020",
+			"endDate": "Diciembre 2020"
+		}
+	},
+	{
+		"title": "Curso de Excel",
+		"institution": "Universidad Católica de Salta"
+	}
+]

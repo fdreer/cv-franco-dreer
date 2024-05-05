@@ -78,14 +78,20 @@ const numberLikes = likes.number
 </div>
 
 <style>
+	#like-container {
+		height: 50px;
+	}
 	#like-btn {
 		display: flex;
 		align-items: center;
+		position: relative;
 	}
 	#likes-amount {
-		font-size: 1.4rem;
-		font-weight: 500;
-		margin-left: -8px;
+		font-size: 1.1rem;
+		font-weight: 400;
+		position: absolute;
+		left: 50px;
+		bottom: 30px;
 	}
 	.liked {
 		color: #e2264d;

@@ -2,17 +2,17 @@
 interface Props {
 	title: string
 	description: string
-	canonical?: string
+	canonical: string
 }
 
 const { title, description, canonical } = Astro.props
 
-const determineCanonicalURL = () => {
-	if (Astro.url.host.includes('localhost')) return 'http://localhost:4321'
-	return canonical || Astro.url.pathname
-}
+// const determineCanonicalURL = () => {
+// 	if (Astro.url.host.includes('localhost')) return 'http://localhost:4321'
+// 	return canonical || Astro.url.pathname
+// }
 
-const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
+// const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
 ---
 
 <title>{title}</title>
@@ -22,7 +22,7 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
 <meta charset="UTF-8" />
 <meta name="description" content={description} />
 
-<link rel="canonical" href={canonicalURL} />
+<link rel="canonical" href={canonical} />
 <meta name="viewport" content="width=device-width" />
 
 <meta

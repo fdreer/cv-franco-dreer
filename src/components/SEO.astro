@@ -1,4 +1,6 @@
 ---
+import DATA from '@/data'
+
 interface Props {
 	title: string
 	description: string
@@ -45,7 +47,7 @@ const { title, description, canonical } = Astro.props
 <meta name="og:title" content={title} />
 <meta name="og:description" content={description} />
 <meta name="og:url" content={Astro.url} />
-<meta name="og:site_name" content="Cv de Franco Dreer" />
+<meta name="og:site_name" content=`Cv de ${DATA.ME.NAME}` />
 <meta name="og:type" content="website" />
 <meta name="og:locale" content="es_ES" />
 

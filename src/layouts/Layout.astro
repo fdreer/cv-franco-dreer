@@ -1,6 +1,7 @@
 ---
 import Footer from '@/components/Footer.astro'
 import SEO from '@/components/SEO.astro'
+import DATA from '@/data'
 
 interface Props {
 	title: string
@@ -13,9 +14,9 @@ const { title } = Astro.props
 <html lang="es">
 	<head>
 		<SEO
-			canonical="https://cv-franco-dreer.pages.dev/"
+			canonical=`${DATA.URL_PRODUCTION}`
 			title={title}
-			description="Esta es la web oficial del currículum vitae de Franco Dreer"
+			description=`Esta es la web oficial del currículum vitae de ${DATA.ME.NAME}`
 		/>
 	</head>
 	<body class="layout">

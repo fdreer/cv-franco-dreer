@@ -10,12 +10,13 @@ import Mail from '@/icons/Mail.astro'
 </Square>
 
 <script>
+	import DATA from '@/data'
 	import { $ } from '@/lib/dom-selector'
 	import { toast } from '@/lib/toast'
 
 	const emailBtn = $('#email-btn')
 	emailBtn?.addEventListener('click', () => {
-		navigator.clipboard.writeText('francodreer@gmail.com')
+		navigator.clipboard.writeText(`${DATA.LINKS.MAIL}`)
 		toast('Email copiado en el portapapeles')
 	})
 </script>

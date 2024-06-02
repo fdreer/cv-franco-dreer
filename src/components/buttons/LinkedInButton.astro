@@ -3,14 +3,15 @@ import LinkedIn from '@/icons/LinkedIn.astro'
 import Square from '../ui/Square.astro'
 
 import '@/components/buttons/styles.css'
+import DATA from '@/data'
 ---
 
 <Square>
 	<a
 		class="social-button"
-		href="https://www.linkedin.com/in/francodreer"
+		href=`${DATA.LINKS.LINKEDIN}`
 		target="_blank"
-		title="Visitar perfil de Franco Dreer en LinkedIn"
+		title=`Visitar perfil de ${DATA.ME.NAME} en LinkedIn`
 	>
 		<LinkedIn />
 	</a>

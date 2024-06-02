@@ -7,17 +7,15 @@ import LinkedInButton from '@/components/buttons/LinkedInButton.astro'
 import MailButton from '@/components/buttons/MailButton.astro'
 import GitHubButton from '@/components/buttons/GitHubButton.astro'
 import CvButton from '@/components/buttons/CvButton.astro'
+import DATA from '@/data'
 ---
 
 <Container>
 	<section class="info">
 		<article class="me">
-			<h1>Franco Dreer</h1>
-			<h3>
-				Estudiante de contador público con competencia en programación de
-				software
-			</h3>
-			<span><MapPin /> Salta Capital, Argentina</span>
+			<h1>{DATA.ME.NAME}</h1>
+			<h3>{DATA.ME.DESCRIPTION}</h3>
+			<span><MapPin /> {DATA.ME.HOME}</span>
 			<footer>
 				<LinkedInButton />
 				<MailButton />
@@ -27,7 +25,11 @@ import CvButton from '@/components/buttons/CvButton.astro'
 		</article>
 		<article>
 			<figure>
-				<Image src={myPhoto} alt="Foto 4x4 de Franco Dreer" class="my-photo" />
+				<Image
+					src={myPhoto}
+					alt=`Foto 4x4 de ${DATA.ME.NAME}`
+					class="my-photo"
+				/>
 			</figure>
 		</article>
 	</section>

@@ -1,6 +1,7 @@
 ---
 import Cv from '@/icons/Cv.astro'
 import Square from '../ui/Square.astro'
+import DATA from '@/data'
 
 import '@/components/buttons/styles.css'
 // URL para descargar cv en pdf --> blob:https://resume.io/e511240d-2443-4337-b470-fc86697547d3
@@ -10,8 +11,8 @@ import '@/components/buttons/styles.css'
 	<a
 		class="social-button"
 		target="_blank"
-		href="/cv_franco_dreer.pdf"
-		title="Descargar Cv de Franco Dreer"
+		href=`${DATA.LINKS.CV_PDF}`
+		title=`Descargar Cv de ${DATA.ME.NAME}`
 	>
 		<Cv />
 	</a>

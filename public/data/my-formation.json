@@ -2,11 +2,11 @@
 	{
 		"title": "Contador Público",
 		"timeFrame": {
-			"startDate": "Febrero 2018",
-			"endDate": "Presente"
+			"startDate": "2018",
+			"endDate": "2024"
 		},
-		"institution": "Universidad Católica de Salta",
-		"description": "Próximo a recibirse"
+		"description": null,
+		"institution": "Universidad Católica de Salta"
 	},
 	{
 		"title": "Certified Tech Developer",

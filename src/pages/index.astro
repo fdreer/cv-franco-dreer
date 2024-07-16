@@ -1,0 +1,21 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import GeneralInfo from '@/sections/GeneralInfo.astro'
+import Likes from '@/sections/Likes.astro'
+import Formation from '@/sections/Formation.astro'
+import ProfessionalProfile from '@/sections/ProfessionalProfile.astro'
+import AboutMe from '@/sections/AboutMe.astro'
+import Courses from '@/sections/Courses.astro'
+import Experience from '@/sections/Experience.astro'
+import DATA from '@/data'
+---
+
+<Layout title=`Cv de ${DATA.ME.NAME}`>
+    <GeneralInfo />
+    <ProfessionalProfile />
+    <Experience />
+    <Formation />
+    <Courses />
+    <AboutMe />
+    <Likes />
+</Layout>

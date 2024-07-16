@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Inglés B1",
+        "institution": "Universidad Católica de Salta",
+        "timeFrame": {
+            "startDate": "Febrero 2020",
+            "endDate": "Diciembre 2020"
+        }
+    },
+    {
+        "title": "Tango Software",
+        "institution": "Tango University",
+        "images": [
+            {
+                "title": "Tango Inicial",
+                "src": "/src/assets/tango_insignia/Tango_Inicial.png",
+                "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=91f2483e21d45c1266176d2b6e4d6cdb7be62ccd"
+            },
+            {
+                "title": "Tango Operador",
+                "src": "/src/assets/tango_insignia/Tango_Operador.png",
+                "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=ba016d1c04842cbf2824e311e8e500d72b38b906"
+            },
+            {
+                "title": "Tango Operador Avanzado",
+                "src": "/src/assets/tango_insignia/Tango_Operador_Avanzado.png",
+                "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=32fa5ea47c72f72500dedb8b58372ebcde4d69bb"
+            },
+            {
+                "title": "Tango Operador Contable",
+                "src": "/src/assets/tango_insignia/Tango_Operador_Contable.png",
+                "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=1a51c394a8806d92e53ccaadfe149ba746cfb8a9"
+            },
+            {
+                "title": "Técnico Tango",
+                "src": "/src/assets/tango_insignia/Tecnico_Tango.png",
+                "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=4cc1da77160afe161f53a59bde97901edae4ce1e"
+            }
+        ]
+    }
+]

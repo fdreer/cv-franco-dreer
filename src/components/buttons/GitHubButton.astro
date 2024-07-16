@@ -1,0 +1,18 @@
+---
+import GitHub from '@/icons/GitHub.astro'
+import Square from '../ui/Square.astro'
+import DATA from '@/data'
+
+import '@/components/buttons/styles.css'
+---
+
+<Square>
+	<a
+		class="social-button"
+		href=`${DATA.LINKS.GITHUB}`
+		target="_blank"
+		title=`Visitar perfil de ${DATA.ME.NAME} en GitHub`
+	>
+		<GitHub />
+	</a>
+</Square>

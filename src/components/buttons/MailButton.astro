@@ -1,0 +1,22 @@
+---
+import Square from '@/components/ui/Square.astro'
+import Mail from '@/icons/Mail.astro'
+---
+
+<Square>
+	<button type="button" class="social-button" id="email-btn">
+		<Mail />
+	</button>
+</Square>
+
+<script>
+	import DATA from '@/data'
+	import { $ } from '@/lib/dom-selector'
+	import { toast } from '@/lib/toast'
+
+	const emailBtn = $('#email-btn')
+	emailBtn?.addEventListener('click', () => {
+		navigator.clipboard.writeText(`${DATA.LINKS.MAIL}`)
+		toast('Email copiado en el portapapeles')
+	})
+</script>

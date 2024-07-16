@@ -1,0 +1,86 @@
+---
+import Container from '@/components/ui/Container.astro'
+import MapPin from '@/icons/MapPin.astro'
+import { Image } from 'astro:assets'
+import myPhoto from '@/assets/img/foto.jpeg'
+import LinkedInButton from '@/components/buttons/LinkedInButton.astro'
+import MailButton from '@/components/buttons/MailButton.astro'
+import GitHubButton from '@/components/buttons/GitHubButton.astro'
+import CvButton from '@/components/buttons/CvButton.astro'
+import DATA from '@/data'
+---
+
+<Container>
+	<section class="info">
+		<article class="me">
+			<h1>{DATA.ME.NAME}</h1>
+			<h3>{DATA.ME.DESCRIPTION}</h3>
+			<span><MapPin /> {DATA.ME.HOME}</span>
+			<footer>
+				<LinkedInButton />
+				<MailButton />
+				<GitHubButton />
+				<CvButton />
+			</footer>
+		</article>
+		<article>
+			<figure>
+				<Image
+					src={myPhoto}
+					alt=`Foto 4x4 de ${DATA.ME.NAME}`
+					class="my-photo"
+				/>
+			</figure>
+		</article>
+	</section>
+</Container>
+
+<style>
+	h1 {
+		font-size: 2rem;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 1.4rem;
+		font-weight: 500;
+	}
+	span {
+		display: flex;
+		align-items: end;
+		gap: 5px;
+	}
+	.info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.me {
+		display: flex;
+		flex-direction: column;
+		max-width: 480px;
+		gap: 1rem;
+		padding-bottom: 20px;
+	}
+	@media (width <= 700px) {
+		.info {
+			flex-direction: column-reverse;
+			gap: 1rem;
+		}
+		.me {
+			align-items: center;
+			text-align: center;
+		}
+	}
+	.my-photo {
+		border-radius: 10px;
+		width: 120px;
+		height: 120px;
+	}
+	footer {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10px;
+		position: relative;
+	}
+</style>

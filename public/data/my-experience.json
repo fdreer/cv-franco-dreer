@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Auxiliar contable",
+        "business": "Santiago Saenz S.A.",
+        "timeFrame": {
+            "startDate": "Febrero 2024",
+            "endDate": "Julio 2024"
+        }
+    },
+    {
+        "title": "Emprendimiento personal",
+        "business": "HydroCell",
+        "timeFrame": {
+            "startDate": "2020",
+            "endDate": "2022"
+        },
+        "description": [
+            "Llevé a cabo un empredimiento en la venta de protectores de pantalla basados en la tecnología hidrogel.",
+            "Me permitió poner en práctica conceptos teóricos como: flujos de caja, costos, registro de operaciones, etc."
+        ]
+    }
+]

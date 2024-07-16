@@ -1,0 +1,20 @@
+{
+    "name": "cv-franco-dreer",
+    "type": "module",
+    "version": "1.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev --remote",
+        "build": "astro build --remote",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.8.1",
+        "@astrojs/cloudflare": "^11.0.1",
+        "@astrojs/db": "^0.11.7",
+        "astro": "^4.11.5",
+        "notyf": "^3.10.0",
+        "typescript": "^5.5.3"
+    }
+}

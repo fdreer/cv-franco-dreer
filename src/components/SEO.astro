@@ -1,0 +1,64 @@
+---
+import DATA from '@/data'
+
+interface Props {
+	title: string
+	description: string
+	canonical: string
+}
+
+const { title, description, canonical } = Astro.props
+
+// const determineCanonicalURL = () => {
+// 	if (Astro.url.host.includes('localhost')) return 'http://localhost:4321'
+// 	return canonical || Astro.url.pathname
+// }
+
+// const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
+---
+
+<title>{title}</title>
+
+<meta name="generator" content={Astro.generator} />
+
+<meta charset="UTF-8" />
+<meta name="description" content={description} />
+
+<link rel="canonical" href={canonical} />
+<meta name="viewport" content="width=device-width" />
+
+<meta
+	name="google-site-verification"
+	content="Lfn30eJU6gnBuXzZQJu0TVsNmYQuSBMti7bjN7rWtBI"
+/>
+<meta
+	name="keywords"
+	content="cv, franco, dreer, contador, contador público, contador publico"
+/>
+
+<meta name="twitter:card" content="summary_large_image" />
+<!-- <meta name="twitter:site" content="@infoLaVelada" />
+<meta name="twitter:creator" content="@IbaiLlanos" /> -->
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<!-- <meta name="twitter:image" content={new URL(image, Astro.url)} /> -->
+
+<!-- <meta name="og:image" content={new URL(image, Astro.url)} /> -->
+<meta name="og:title" content={title} />
+<meta name="og:description" content={description} />
+<meta name="og:url" content={Astro.url} />
+<meta name="og:site_name" content=`Cv de ${DATA.ME.NAME}` />
+<meta name="og:type" content="website" />
+<meta name="og:locale" content="es_ES" />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/img/icons/apple-touch-icon.png" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="msapplication-config" content="/browserconfig.xml" /> -->
+
+<!-- <script is:inline src="/registerSW.js"></script>
+<link rel="manifest" href="/manifest.webmanifest" /> -->

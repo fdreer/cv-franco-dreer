@@ -1,0 +1,53 @@
+---
+import Container from '@/components/ui/Container.astro'
+import myExperience from '../../public/data/my-experience.json'
+---
+
+<Container>
+	<section class="data">
+		<h2>Experiencia</h2>
+		<ul>
+			{
+				myExperience.map(({ title, business, description, timeFrame }) => {
+					return (
+						<li>
+							<div>
+								<h3>
+									{title}, {business}
+								</h3>
+								<span>
+									{timeFrame.startDate} - {timeFrame.endDate}
+								</span>
+							</div>
+							{description && description.map((d) => <p>{d}</p>)}
+						</li>
+					)
+				})
+			}
+		</ul>
+	</section>
+</Container>
+
+<style>
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	li {
+		div {
+			margin-bottom: 5px;
+
+			span {
+				font-weight: 500;
+				font-size: 0.9rem;
+				color: #666;
+			}
+		}
+
+		p {
+			font-size: 1.125rem;
+			margin-bottom: 10px;
+		}
+	}
+</style>

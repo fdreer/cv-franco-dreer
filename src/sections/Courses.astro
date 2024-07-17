@@ -1,6 +1,7 @@
 ---
 import Container from '@/components/ui/Container.astro'
 import myCourses from '../../public/data/my-courses.json'
+import Insignia from '@/components/Insignia.astro'
 ---
 
 <Container>
@@ -9,7 +10,7 @@ import myCourses from '../../public/data/my-courses.json'
         <ul>
             {
                 myCourses.map(
-                    ({title, institution, timeFrame, images}: Course) => {
+                    ({ title, institution, timeFrame, images }: Course) => {
                         return (
                             <li>
                                 <div>
@@ -23,14 +24,12 @@ import myCourses from '../../public/data/my-courses.json'
                                         </span>
                                     ) : null}
                                     <div class="container-insignias">
-                                        {images?.map(({title, src, href}) => (
-                                            <a href={href} target="_blank">
-                                                <img
-                                                    src={src}
-                                                    alt={title}
-                                                    class="insignia"
-                                                />
-                                            </a>
+                                        {images?.map(({ title, src, href }) => (
+                                            <Insignia
+                                                imagePath={src}
+                                                href={href as string}
+                                                altText={title}
+                                            />
                                         ))}
                                     </div>
                                 </div>
@@ -66,8 +65,5 @@ import myCourses from '../../public/data/my-courses.json'
         flex-wrap: wrap;
         justify-content: flex-start;
         gap: 10px;
-    }
-    .insignia {
-        width: 100px;
     }
 </style>

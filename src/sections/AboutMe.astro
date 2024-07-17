@@ -4,35 +4,35 @@ import aboutMe from '../../public/data/about-me.json'
 ---
 
 <Container>
-	<section class="data">
-		<h2>Sobre mí</h2>
-		<ul>
-			{
-				aboutMe.map(({ title, description }) => {
-					return (
-						<li>
-							<h3>{title}</h3>
-							{description && <p>{description}</p>}
-						</li>
-					)
-				})
-			}
-		</ul>
-	</section>
+    <section class="data">
+        <h2>Sobre mí</h2>
+        <ul>
+            {
+                aboutMe.map(({ title, description }) => {
+                    return (
+                        <li>
+                            <h3>{title}</h3>
+                            {description && <p>{description}</p>}
+                        </li>
+                    )
+                })
+            }
+        </ul>
+    </section>
 </Container>
 
 <style>
-	ul {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-	}
-	li {
-		h3 {
-			margin-bottom: 5px;
-		}
-		p {
-			font-size: 1.1rem;
-		}
-	}
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    li {
+        h3 {
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }
 </style>

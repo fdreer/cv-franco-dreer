@@ -35,6 +35,11 @@
                 "title": "Técnico Tango",
                 "src": "/src/assets/tango_insignia/Tecnico_Tango.png",
                 "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=4cc1da77160afe161f53a59bde97901edae4ce1e"
+            },
+            {
+                "title": "Técnico Tango Avanzado",
+                "src": "/src/assets/tango_insignia/Tecnico_Tango_Avanzado.png",
+                "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=437873f6d91c1bd7a10d0c986a97d0ea87b4cfe3"
             }
         ]
     }

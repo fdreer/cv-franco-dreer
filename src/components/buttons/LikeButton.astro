@@ -1,360 +1,379 @@
 ---
+export const prerender = false
+
 import { Likes, db, eq } from 'astro:db'
 
 const [likes] = await db
-	.select({
-		number: Likes.number
-	})
-	.from(Likes)
-	.where(eq(Likes.id, 'cv-franco'))
+    .select({
+        number: Likes.number
+    })
+    .from(Likes)
+    .where(eq(Likes.id, 'cv-franco'))
 const numberLikes = likes.number
 ---
 
 <div id="like-container">
-	<input type="checkbox" id="checkbox" />
-	<label for="checkbox" id="like-btn">
-		<svg
-			id="heart-svg"
-			viewBox="467 392 58 57"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<title>Me gusta</title>
-			<g
-				id="Group"
-				fill="none"
-				fill-rule="evenodd"
-				transform="translate(467 392)"
-			>
-				<path
-					d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
-					id="heart"
-					fill="#AAB8C2"></path>
-				<circle
-					id="main-circ"
-					fill="#E2264D"
-					opacity="0"
-					cx="29.5"
-					cy="29.5"
-					r="1.5"></circle>
+    <input type="checkbox" id="checkbox" />
+    <label for="checkbox" id="like-btn">
+        <svg
+            id="heart-svg"
+            viewBox="467 392 58 57"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <title>Me gusta</title>
+            <g
+                id="Group"
+                fill="none"
+                fill-rule="evenodd"
+                transform="translate(467 392)"
+            >
+                <path
+                    d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
+                    id="heart"
+                    fill="#AAB8C2"></path>
+                <circle
+                    id="main-circ"
+                    fill="#E2264D"
+                    opacity="0"
+                    cx="29.5"
+                    cy="29.5"
+                    r="1.5"></circle>
 
-				<g id="grp7" opacity="0" transform="translate(7 6)">
-					<circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"></circle>
-					<circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"></circle>
-				</g>
+                <g id="grp7" opacity="0" transform="translate(7 6)">
+                    <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"
+                    ></circle>
+                    <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"
+                    ></circle>
+                </g>
 
-				<g id="grp6" opacity="0" transform="translate(0 28)">
-					<circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"></circle>
-					<circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"></circle>
-				</g>
+                <g id="grp6" opacity="0" transform="translate(0 28)">
+                    <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"
+                    ></circle>
+                    <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"
+                    ></circle>
+                </g>
 
-				<g id="grp3" opacity="0" transform="translate(52 28)">
-					<circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"></circle>
-					<circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"></circle>
-				</g>
+                <g id="grp3" opacity="0" transform="translate(52 28)">
+                    <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"
+                    ></circle>
+                    <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"
+                    ></circle>
+                </g>
 
-				<g id="grp2" opacity="0" transform="translate(44 6)">
-					<circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"></circle>
-					<circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"></circle>
-				</g>
+                <g id="grp2" opacity="0" transform="translate(44 6)">
+                    <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"
+                    ></circle>
+                    <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"
+                    ></circle>
+                </g>
 
-				<g id="grp5" opacity="0" transform="translate(14 50)">
-					<circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2"></circle>
-					<circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2"></circle>
-				</g>
+                <g id="grp5" opacity="0" transform="translate(14 50)">
+                    <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2"
+                    ></circle>
+                    <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2"
+                    ></circle>
+                </g>
 
-				<g id="grp4" opacity="0" transform="translate(35 50)">
-					<circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2"></circle>
-					<circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2"></circle>
-				</g>
+                <g id="grp4" opacity="0" transform="translate(35 50)">
+                    <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2"
+                    ></circle>
+                    <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2"
+                    ></circle>
+                </g>
 
-				<g id="grp1" opacity="0" transform="translate(24)">
-					<circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"></circle>
-					<circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"></circle>
-				</g>
-			</g>
-		</svg>
-		<span id="likes-amount">{numberLikes}</span>
-	</label>
+                <g id="grp1" opacity="0" transform="translate(24)">
+                    <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"
+                    ></circle>
+                    <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"
+                    ></circle>
+                </g>
+            </g>
+        </svg>
+        <span id="likes-amount">{numberLikes}</span>
+    </label>
 </div>
 
 <style>
-	#like-container {
-		height: 50px;
-	}
-	#like-btn {
-		display: flex;
-		align-items: center;
-		position: relative;
-	}
-	#likes-amount {
-		font-size: 1.1rem;
-		font-weight: 400;
-		position: absolute;
-		left: 50px;
-		bottom: 30px;
-	}
-	.liked {
-		color: #e2264d;
-	}
-	svg {
-		cursor: pointer;
-		overflow: visible;
-		width: 60px;
-		#heart {
-			transform-origin: center;
-			animation: animateHeartOut 0.3s linear forwards;
-		}
-		#main-circ {
-			transform-origin: 29.5px 29.5px;
-		}
-	}
-	#checkbox {
-		display: none;
-	}
-	#checkbox:checked + label svg {
-		#heart {
-			transform: scale(0.2);
-			fill: #e2264d;
-			animation: animateHeart 0.3s linear forwards 0.25s;
-		}
-		#main-circ {
-			transition: all 2s;
-			animation: animateCircle 0.3s linear forwards;
-			opacity: 1;
-		}
-		#grp1 {
-			opacity: 1;
-			transition: 0.1s all 0.3s;
-			#oval1 {
-				transform: scale(0) translate(0, -30px);
-				transform-origin: 0 0 0;
-				transition: 0.5s transform 0.3s;
-			}
-			#oval2 {
-				transform: scale(0) translate(10px, -50px);
-				transform-origin: 0 0 0;
-				transition: 1.5s transform 0.3s;
-			}
-		}
-		#grp2 {
-			opacity: 1;
-			transition: 0.1s all 0.3s;
-			#oval1 {
-				transform: scale(0) translate(30px, -15px);
-				transform-origin: 0 0 0;
-				transition: 0.5s transform 0.3s;
-			}
-			#oval2 {
-				transform: scale(0) translate(60px, -15px);
-				transform-origin: 0 0 0;
-				transition: 1.5s transform 0.3s;
-			}
-		}
-		#grp3 {
-			opacity: 1;
-			transition: 0.1s all 0.3s;
-			#oval1 {
-				transform: scale(0) translate(30px, 0px);
-				transform-origin: 0 0 0;
-				transition: 0.5s transform 0.3s;
-			}
-			#oval2 {
-				transform: scale(0) translate(60px, 10px);
-				transform-origin: 0 0 0;
-				transition: 1.5s transform 0.3s;
-			}
-		}
-		#grp4 {
-			opacity: 1;
-			transition: 0.1s all 0.3s;
-			#oval1 {
-				transform: scale(0) translate(30px, 15px);
-				transform-origin: 0 0 0;
-				transition: 0.5s transform 0.3s;
-			}
-			#oval2 {
-				transform: scale(0) translate(40px, 50px);
-				transform-origin: 0 0 0;
-				transition: 1.5s transform 0.3s;
-			}
-		}
-		#grp5 {
-			opacity: 1;
-			transition: 0.1s all 0.3s;
-			#oval1 {
-				transform: scale(0) translate(-10px, 20px);
-				transform-origin: 0 0 0;
-				transition: 0.5s transform 0.3s;
-			}
-			#oval2 {
-				transform: scale(0) translate(-60px, 30px);
-				transform-origin: 0 0 0;
-				transition: 1.5s transform 0.3s;
-			}
-		}
-		#grp6 {
-			opacity: 1;
-			transition: 0.1s all 0.3s;
-			#oval1 {
-				transform: scale(0) translate(-30px, 0px);
-				transform-origin: 0 0 0;
-				transition: 0.5s transform 0.3s;
-			}
-			#oval2 {
-				transform: scale(0) translate(-60px, -5px);
-				transform-origin: 0 0 0;
-				transition: 1.5s transform 0.3s;
-			}
-		}
-		#grp7 {
-			opacity: 1;
-			transition: 0.1s all 0.3s;
-			#oval1 {
-				transform: scale(0) translate(-30px, -15px);
-				transform-origin: 0 0 0;
-				transition: 0.5s transform 0.3s;
-			}
-			#oval2 {
-				transform: scale(0) translate(-55px, -30px);
-				transform-origin: 0 0 0;
-				transition: 1.5s transform 0.3s;
-			}
-		}
-		#grp2 {
-			opacity: 1;
-			transition: 0.1s opacity 0.3s;
-		}
-		#grp3 {
-			opacity: 1;
-			transition: 0.1s opacity 0.3s;
-		}
-		#grp4 {
-			opacity: 1;
-			transition: 0.1s opacity 0.3s;
-		}
-		#grp5 {
-			opacity: 1;
-			transition: 0.1s opacity 0.3s;
-		}
-		#grp6 {
-			opacity: 1;
-			transition: 0.1s opacity 0.3s;
-		}
-		#grp7 {
-			opacity: 1;
-			transition: 0.1s opacity 0.3s;
-		}
-	}
+    #like-container {
+        height: 50px;
+    }
+    #like-btn {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    #likes-amount {
+        font-size: 1.3rem;
+        font-weight: 400;
+        position: absolute;
+        left: 65px;
+        bottom: 40px;
+    }
+    .liked {
+        color: #e2264d;
+    }
+    svg {
+        cursor: pointer;
+        overflow: visible;
+        width: 80px;
+        #heart {
+            transform-origin: center;
+            animation: animateHeartOut 0.3s linear forwards;
+        }
+        #main-circ {
+            transform-origin: 29.5px 29.5px;
+        }
+    }
+    #checkbox {
+        display: none;
+    }
+    #checkbox:checked + label svg {
+        #heart {
+            transform: scale(0.2);
+            fill: #e2264d;
+            animation: animateHeart 0.3s linear forwards 0.25s;
+        }
+        #main-circ {
+            transition: all 2s;
+            animation: animateCircle 0.3s linear forwards;
+            opacity: 1;
+        }
+        #grp1 {
+            opacity: 1;
+            transition: 0.1s all 0.3s;
+            #oval1 {
+                transform: scale(0) translate(0, -30px);
+                transform-origin: 0 0 0;
+                transition: 0.5s transform 0.3s;
+            }
+            #oval2 {
+                transform: scale(0) translate(10px, -50px);
+                transform-origin: 0 0 0;
+                transition: 1.5s transform 0.3s;
+            }
+        }
+        #grp2 {
+            opacity: 1;
+            transition: 0.1s all 0.3s;
+            #oval1 {
+                transform: scale(0) translate(30px, -15px);
+                transform-origin: 0 0 0;
+                transition: 0.5s transform 0.3s;
+            }
+            #oval2 {
+                transform: scale(0) translate(60px, -15px);
+                transform-origin: 0 0 0;
+                transition: 1.5s transform 0.3s;
+            }
+        }
+        #grp3 {
+            opacity: 1;
+            transition: 0.1s all 0.3s;
+            #oval1 {
+                transform: scale(0) translate(30px, 0px);
+                transform-origin: 0 0 0;
+                transition: 0.5s transform 0.3s;
+            }
+            #oval2 {
+                transform: scale(0) translate(60px, 10px);
+                transform-origin: 0 0 0;
+                transition: 1.5s transform 0.3s;
+            }
+        }
+        #grp4 {
+            opacity: 1;
+            transition: 0.1s all 0.3s;
+            #oval1 {
+                transform: scale(0) translate(30px, 15px);
+                transform-origin: 0 0 0;
+                transition: 0.5s transform 0.3s;
+            }
+            #oval2 {
+                transform: scale(0) translate(40px, 50px);
+                transform-origin: 0 0 0;
+                transition: 1.5s transform 0.3s;
+            }
+        }
+        #grp5 {
+            opacity: 1;
+            transition: 0.1s all 0.3s;
+            #oval1 {
+                transform: scale(0) translate(-10px, 20px);
+                transform-origin: 0 0 0;
+                transition: 0.5s transform 0.3s;
+            }
+            #oval2 {
+                transform: scale(0) translate(-60px, 30px);
+                transform-origin: 0 0 0;
+                transition: 1.5s transform 0.3s;
+            }
+        }
+        #grp6 {
+            opacity: 1;
+            transition: 0.1s all 0.3s;
+            #oval1 {
+                transform: scale(0) translate(-30px, 0px);
+                transform-origin: 0 0 0;
+                transition: 0.5s transform 0.3s;
+            }
+            #oval2 {
+                transform: scale(0) translate(-60px, -5px);
+                transform-origin: 0 0 0;
+                transition: 1.5s transform 0.3s;
+            }
+        }
+        #grp7 {
+            opacity: 1;
+            transition: 0.1s all 0.3s;
+            #oval1 {
+                transform: scale(0) translate(-30px, -15px);
+                transform-origin: 0 0 0;
+                transition: 0.5s transform 0.3s;
+            }
+            #oval2 {
+                transform: scale(0) translate(-55px, -30px);
+                transform-origin: 0 0 0;
+                transition: 1.5s transform 0.3s;
+            }
+        }
+        #grp2 {
+            opacity: 1;
+            transition: 0.1s opacity 0.3s;
+        }
+        #grp3 {
+            opacity: 1;
+            transition: 0.1s opacity 0.3s;
+        }
+        #grp4 {
+            opacity: 1;
+            transition: 0.1s opacity 0.3s;
+        }
+        #grp5 {
+            opacity: 1;
+            transition: 0.1s opacity 0.3s;
+        }
+        #grp6 {
+            opacity: 1;
+            transition: 0.1s opacity 0.3s;
+        }
+        #grp7 {
+            opacity: 1;
+            transition: 0.1s opacity 0.3s;
+        }
+    }
 
-	@keyframes animateCircle {
-		40% {
-			transform: scale(10);
-			opacity: 1;
-			fill: #dd4688;
-		}
-		55% {
-			transform: scale(11);
-			opacity: 1;
-			fill: #d46abf;
-		}
-		65% {
-			transform: scale(12);
-			opacity: 1;
-			fill: #cc8ef5;
-		}
-		75% {
-			transform: scale(13);
-			opacity: 1;
-			fill: transparent;
-			stroke: #cc8ef5;
-			stroke-width: 0.5;
-		}
-		85% {
-			transform: scale(17);
-			opacity: 1;
-			fill: transparent;
-			stroke: #cc8ef5;
-			stroke-width: 0.2;
-		}
-		95% {
-			transform: scale(18);
-			opacity: 1;
-			fill: transparent;
-			stroke: #cc8ef5;
-			stroke-width: 0.1;
-		}
-		100% {
-			transform: scale(19);
-			opacity: 1;
-			fill: transparent;
-			stroke: #cc8ef5;
-			stroke-width: 0;
-		}
-	}
+    @keyframes animateCircle {
+        40% {
+            transform: scale(10);
+            opacity: 1;
+            fill: #dd4688;
+        }
+        55% {
+            transform: scale(11);
+            opacity: 1;
+            fill: #d46abf;
+        }
+        65% {
+            transform: scale(12);
+            opacity: 1;
+            fill: #cc8ef5;
+        }
+        75% {
+            transform: scale(13);
+            opacity: 1;
+            fill: transparent;
+            stroke: #cc8ef5;
+            stroke-width: 0.5;
+        }
+        85% {
+            transform: scale(17);
+            opacity: 1;
+            fill: transparent;
+            stroke: #cc8ef5;
+            stroke-width: 0.2;
+        }
+        95% {
+            transform: scale(18);
+            opacity: 1;
+            fill: transparent;
+            stroke: #cc8ef5;
+            stroke-width: 0.1;
+        }
+        100% {
+            transform: scale(19);
+            opacity: 1;
+            fill: transparent;
+            stroke: #cc8ef5;
+            stroke-width: 0;
+        }
+    }
 
-	@keyframes animateHeart {
-		0% {
-			transform: scale(0.2);
-		}
-		40% {
-			transform: scale(1.2);
-		}
-		100% {
-			transform: scale(1);
-		}
-	}
+    @keyframes animateHeart {
+        0% {
+            transform: scale(0.2);
+        }
+        40% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
 
-	@keyframes animateHeartOut {
-		0% {
-			transform: scale(1.4);
-		}
-		100% {
-			transform: scale(1);
-		}
-	}
+    @keyframes animateHeartOut {
+        0% {
+            transform: scale(1.4);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
 </style>
 
 <script>
-	import { $ } from '@/lib/dom-selector'
-	import { isLiked, setLike, removeLike } from '@/lib/local-storage'
+    import { $ } from '@/lib/dom-selector'
+    import { isLiked, setLike, removeLike } from '@/lib/local-storage'
 
-	const intialLikeState = isLiked()
+    const intialLikeState = isLiked()
 
-	const likeContainer = $('#like-container')
-	const heart = $('#checkbox', likeContainer as HTMLElement) as HTMLInputElement
-	const numberLikes = $('#likes-amount')
+    const likeContainer = $('#like-container')
+    const heart = $(
+        '#checkbox',
+        likeContainer as HTMLElement
+    ) as HTMLInputElement
+    const numberLikes = $('#likes-amount')
 
-	if (intialLikeState === 'true') {
-		heart.checked = true
-		numberLikes?.classList.add('liked')
-	}
+    if (intialLikeState === 'true') {
+        heart.checked = true
+        numberLikes?.classList.add('liked')
+    }
 
-	if (likeContainer && heart && numberLikes) {
-		heart.addEventListener('click', async () => {
-			const like = isLiked()
-			if (!like) {
-				setLike()
-				heart.checked = true
-				numberLikes?.classList.add('liked')
-				numberLikes.textContent = `${Number(numberLikes.textContent) + 1}`
+    if (likeContainer && heart && numberLikes) {
+        heart.addEventListener('click', async () => {
+            const like = isLiked()
+            if (!like) {
+                setLike()
+                heart.checked = true
+                numberLikes?.classList.add('liked')
+                numberLikes.textContent = `${Number(numberLikes.textContent) + 1}`
 
-				const res = await fetch('/api/likes', {
-					method: 'POST'
-				})
-				// const data = await res.json()
-				return
-			}
+                const res = await fetch('/api/likes', {
+                    method: 'POST'
+                })
+                // const data = await res.json()
+                return
+            }
 
-			removeLike()
-			heart.checked = false
-			numberLikes?.classList.remove('liked')
-			numberLikes.textContent = `${Number(numberLikes.textContent) - 1}`
+            removeLike()
+            heart.checked = false
+            numberLikes?.classList.remove('liked')
+            numberLikes.textContent = `${Number(numberLikes.textContent) - 1}`
 
-			const res = await fetch('/api/likes', {
-				method: 'PATCH'
-			})
-			// const data = await res.json()
-			return
-		})
-	}
+            const res = await fetch('/api/likes', {
+                method: 'PATCH'
+            })
+            // const data = await res.json()
+            return
+        })
+    }
 </script>

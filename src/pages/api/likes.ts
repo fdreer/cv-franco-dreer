@@ -1,7 +1,7 @@
+export const prerender = false
+
 import type { APIRoute } from 'astro'
 import { Likes, db, eq } from 'astro:db'
-
-export const prerender = false
 
 export const GET: APIRoute = async () => {
     const [likes] = await db

@@ -3,7 +3,7 @@ import cloudflare from '@astrojs/cloudflare'
 import db from '@astrojs/db'
 
 export default defineConfig({
-    output: 'hybrid',
+    output: 'server',
     adapter: cloudflare(),
     integrations: [db()]
 })

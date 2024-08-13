@@ -4,12 +4,6 @@ import db from '@astrojs/db'
 
 export default defineConfig({
     output: 'hybrid',
-    adapter: cloudflare({
-        routes: {
-            extend: {
-                include: '/api/likes'
-            }
-        }
-    }),
+    adapter: cloudflare(),
     integrations: [db()]
 })

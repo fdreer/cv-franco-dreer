@@ -1,5 +1,13 @@
 [
     {
+        "title": "Profesional independiente",
+        "business": "GALLO & DREER Contadores",
+        "timeFrame": {
+            "startDate": "Julio 2024",
+            "endDate": "Actualidad"
+        }
+    },
+    {
         "title": "Auxiliar contable",
         "business": "Santiago Saenz S.A.",
         "timeFrame": {
@@ -15,8 +23,7 @@
             "endDate": "2022"
         },
         "description": [
-            "Llevé a cabo un empredimiento en la venta de protectores de pantalla basados en la tecnología hidrogel.",
-            "Me permitió poner en práctica conceptos teóricos como: flujos de caja, costos, registro de operaciones, etc."
+            "Llevé a cabo un empredimiento en la venta de protectores de pantalla basados en la tecnología hidrogel."
         ]
     }
 ]

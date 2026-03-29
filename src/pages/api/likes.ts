@@ -1,53 +1,26 @@
 import type { APIRoute } from 'astro'
-import { Likes, db, eq } from 'astro:db'
 
-export const GET: APIRoute = async () => {
-    const [likes] = await db
-        .select({
-            number: Likes.number
-        })
-        .from(Likes)
-        .where(eq(Likes.id, 'cv-franco'))
+const KEY = 'cv-franco'
 
-    return new Response(JSON.stringify({ likes: likes.number }))
+export const GET: APIRoute = async ({ locals }) => {
+    const kv = locals.runtime.env.LIKES_KV
+    const value = await kv.get(KEY)
+    const likes = value ? parseInt(value) : 0
+    return new Response(JSON.stringify({ likes }))
 }
 
-export const POST: APIRoute = async () => {
-    const [likes] = await db
-        .select({
-            id: Likes.id,
-            number: Likes.number
-        })
-        .from(Likes)
-        .where(eq(Likes.id, 'cv-franco'))
-
-    const newLikes = await db
-        .update(Likes)
-        .set({
-            number: likes.number + 1
-        })
-        .where(eq(Likes.id, 'cv-franco'))
-        .returning({ updateLikes: Likes.number })
-
-    return new Response(JSON.stringify({ newLikes: newLikes[0].updateLikes }))
+export const POST: APIRoute = async ({ locals }) => {
+    const kv = locals.runtime.env.LIKES_KV
+    const value = await kv.get(KEY)
+    const newLikes = (value ? parseInt(value) : 0) + 1
+    await kv.put(KEY, String(newLikes))
+    return new Response(JSON.stringify({ newLikes }))
 }
 
-export const PATCH: APIRoute = async () => {
-    const [likes] = await db
-        .select({
-            id: Likes.id,
-            number: Likes.number
-        })
-        .from(Likes)
-        .where(eq(Likes.id, 'cv-franco'))
-
-    const newLikes = await db
-        .update(Likes)
-        .set({
-            number: likes.number - 1
-        })
-        .where(eq(Likes.id, 'cv-franco'))
-        .returning({ updateLikes: Likes.number })
-
-    return new Response(JSON.stringify({ newLikes: newLikes[0].updateLikes }))
+export const PATCH: APIRoute = async ({ locals }) => {
+    const kv = locals.runtime.env.LIKES_KV
+    const value = await kv.get(KEY)
+    const newLikes = Math.max(0, (value ? parseInt(value) : 0) - 1)
+    await kv.put(KEY, String(newLikes))
+    return new Response(JSON.stringify({ newLikes }))
 }

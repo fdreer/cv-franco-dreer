@@ -7,7 +7,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: var(--color-primary) 1px solid;
-		box-shadow: 5px 5px 0px -3px var(--color-primary);
+		border: 2px solid var(--color-accent);
+		border-radius: 8px;
+		transition:
+			background-color 0.18s ease,
+			border-color 0.18s ease;
+	}
+	.square:hover {
+		background-color: var(--color-accent-light);
+		border-color: var(--color-primary);
 	}
 </style>

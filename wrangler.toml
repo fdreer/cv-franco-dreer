@@ -1,0 +1,6 @@
+name = "cv-franco-dreer"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "LIKES_KV"
+id = "ea243ac5ddc74f9db61489bd40fe5dc6"

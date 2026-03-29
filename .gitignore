@@ -22,3 +22,12 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Wrangler (Cloudflare CLI)
+.wrangler/
+
+# Claude / AI agents
+.claude/
+.agents/
+skills-lock.json
+CLAUDE.md

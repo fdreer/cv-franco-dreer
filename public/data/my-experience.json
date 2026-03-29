@@ -1,29 +1,54 @@
 [
     {
-        "title": "Profesional independiente",
+        "title": "Contador Público y Consultor de Odoo",
+        "business": "BIMEG Constructora",
+        "timeFrame": {
+            "startDate": "Octubre 2025",
+            "endDate": "Actualidad"
+        },
+        "description": [
+            "Responsable de la configuración del sistema ERP Odoo y la formación de los usuarios para su uso eficiente.",
+            "Desarrollos de tableros en Power BI.",
+            "Ejecución de la contabilidad general y liquidación de impuestos de la empresa.",
+            "Estandarización de reportes críticos para la toma de decisiones, tales como flujos de fondos y estructura de resultados por obra."
+        ]
+    },
+    {
+        "title": "Contador Público",
+        "business": "Nexo Consultora",
+        "timeFrame": {
+            "startDate": "Octubre 2025",
+            "endDate": "Actualidad"
+        },
+        "description": [
+            "Consultoría en aspectos impositivos, contables y de finanzas para diversos clientes.",
+            "Elaboración de balances, estados financieros y presentación de declaraciones juradas."
+        ]
+    },
+    {
+        "title": "Contador Público y Consultor de Tango Software",
         "business": "Gallo & Dreer Contadores",
         "timeFrame": {
             "startDate": "Julio 2024",
-            "endDate": "Actualidad"
-        }
-    },
-    {
-        "title": "Auxiliar contable",
-        "business": "Santiago Saenz S.A.",
-        "timeFrame": {
-            "startDate": "Febrero 2024",
-            "endDate": "Julio 2024"
-        }
-    },
-    {
-        "title": "Emprendimiento personal",
-        "business": "HydroCell",
-        "timeFrame": {
-            "startDate": "2020",
-            "endDate": "2022"
+            "endDate": "Noviembre 2025"
         },
         "description": [
-            "Llevé a cabo un empredimiento en la venta de protectores de pantalla basados en la tecnología hidrogel."
+            "Parametrización, implementación y capacitación integral en todos los módulos del sistema Tango Software.",
+            "Gestión de la contabilidad y liquidación de impuestos.",
+            "Optimización de procesos y automatización de tareas administrativas/contables.",
+            "Integración de procesos con herramientas de BI para mejorar el reporting."
+        ]
+    },
+    {
+        "title": "Auxiliar Contable",
+        "business": "Santiago Saenz S.A.",
+        "timeFrame": {
+            "startDate": "Enero 2024",
+            "endDate": "Junio 2024"
+        },
+        "description": [
+            "Ejecución de conciliaciones de cuentas y soporte operativo en el área contable.",
+            "Gestión y carga de facturación, garantizando la precisión de los registros financieros."
         ]
     }
 ]

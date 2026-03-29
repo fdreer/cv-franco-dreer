@@ -1,12 +1,13 @@
 ---
 import Container from '@/components/ui/Container.astro'
 import MapPin from '@/icons/MapPin.astro'
+import Mail from '@/icons/Mail.astro'
+import LinkedIn from '@/icons/LinkedIn.astro'
+import GitHub from '@/icons/GitHub.astro'
+import Cv from '@/icons/Cv.astro'
 import { Image } from 'astro:assets'
 import myPhoto from '@/assets/img/foto.jpeg'
-import LinkedInButton from '@/components/buttons/LinkedInButton.astro'
-import MailButton from '@/components/buttons/MailButton.astro'
-import GitHubButton from '@/components/buttons/GitHubButton.astro'
-import CvButton from '@/components/buttons/CvButton.astro'
+import LikeButton from '@/components/buttons/LikeButton.astro'
 import DATA from '@/data'
 ---
 
@@ -15,15 +16,29 @@ import DATA from '@/data'
         <article class="me">
             <h1>{DATA.ME.NAME}</h1>
             <h3>{DATA.ME.DESCRIPTION}</h3>
-            <span><MapPin /> {DATA.ME.HOME}</span>
+            <div class="meta">
+                <span class="meta-item">
+                    <MapPin />
+                    {DATA.ME.HOME}
+                </span>
+                <a href={`mailto:${DATA.LINKS.MAIL}`} class="meta-item meta-link">
+                    <Mail />
+                    {DATA.LINKS.MAIL}
+                </a>
+            </div>
             <footer>
-                <LinkedInButton />
-                <CvButton />
-                <GitHubButton />
-                <MailButton />
+                <a href={DATA.LINKS.LINKEDIN} target="_blank" class="link-btn link-btn--linkedin" title="LinkedIn">
+                    <LinkedIn /> LinkedIn
+                </a>
+                <a href={DATA.LINKS.GITHUB} target="_blank" class="link-btn link-btn--github" title="GitHub">
+                    <GitHub /> GitHub
+                </a>
+                <a href={DATA.LINKS.CV_PDF} target="_blank" class="link-btn link-btn--cv" title="Descargar CV">
+                    <Cv /> Descargar CV
+                </a>
             </footer>
         </article>
-        <article>
+        <article class="photo-col">
             <figure>
                 <Image
                     src={myPhoto}
@@ -31,23 +46,55 @@ import DATA from '@/data'
                     class="my-photo"
                 />
             </figure>
+            <LikeButton />
         </article>
     </section>
 </Container>
 
 <style>
+    section {
+        border-top: 4px solid var(--color-accent);
+    }
+    .photo-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
     h1 {
-        font-size: 2rem;
-        font-weight: 500;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--color-primary);
     }
     h3 {
-        font-size: 1.4rem;
+        font-size: 1rem;
         font-weight: 500;
+        color: var(--color-accent);
+        line-height: 1.5;
     }
-    span {
+    .meta {
         display: flex;
-        align-items: end;
+        flex-direction: column;
         gap: 5px;
+    }
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--color-muted);
+        font-size: 0.875rem;
+    }
+    .meta-item :global(svg) {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+    .meta-link {
+        text-decoration: none;
+        transition: color 0.15s ease;
+    }
+    .meta-link:hover {
+        color: var(--color-accent);
     }
     .info {
         display: flex;
@@ -58,29 +105,75 @@ import DATA from '@/data'
         display: flex;
         flex-direction: column;
         max-width: 480px;
-        gap: 1rem;
-        padding-bottom: 20px;
+        gap: 0.75rem;
     }
     @media (width <= 700px) {
         .info {
             flex-direction: column-reverse;
-            gap: 1rem;
+            gap: 1.25rem;
         }
         .me {
             align-items: center;
             text-align: center;
         }
+        .meta {
+            align-items: center;
+        }
     }
     .my-photo {
-        border-radius: 10px;
-        width: 120px;
-        height: 120px;
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+        object-fit: cover;
+        border: 3px solid var(--color-accent);
+        box-shadow: 0 0 0 4px var(--color-accent-light);
     }
     footer {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        gap: 10px;
-        position: relative;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-top: 0.25rem;
+    }
+    .link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 12px;
+        border-radius: 6px;
+        border: 1.5px solid var(--color-border);
+        color: var(--color-text);
+        font-size: 0.82rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition:
+            border-color 0.15s ease,
+            color 0.15s ease,
+            background 0.15s ease;
+    }
+    .link-btn :global(svg) {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+    }
+    .link-btn--linkedin:hover {
+        border-color: #0a66c2;
+        color: #0a66c2;
+        background: #e8f0fb;
+    }
+    .link-btn--github:hover {
+        border-color: #24292f;
+        color: #24292f;
+        background: #f0f0f0;
+    }
+    .link-btn--cv {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+        background: var(--color-accent-light);
+    }
+    .link-btn--cv:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        background: #bae6fd;
     }
 </style>

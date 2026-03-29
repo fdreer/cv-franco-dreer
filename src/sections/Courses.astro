@@ -1,69 +1,135 @@
 ---
 import Container from '@/components/ui/Container.astro'
+import { Image } from 'astro:assets'
 import myCourses from '../../public/data/my-courses.json'
 import Insignia from '@/components/Insignia.astro'
+import ucasal from '@/assets/img/ucasal.jpg'
+import tango from '@/assets/img/tango.jpg'
+
+const logoMap: Record<string, ImageMetadata> = {
+	'Universidad Católica de Salta': ucasal,
+	'Tango University': tango,
+}
 ---
 
 <Container>
-    <section class="data">
-        <h2>Cursos</h2>
-        <ul>
-            {
-                myCourses.map(
-                    ({ title, institution, timeFrame, images }: Course) => {
-                        return (
-                            <li>
-                                <div>
-                                    <h3>
-                                        {title}, {institution}
-                                    </h3>
-                                    {timeFrame ? (
-                                        <span>
-                                            {timeFrame.startDate} -
-                                            {timeFrame.endDate}
-                                        </span>
-                                    ) : null}
-                                    <div class="container-insignias">
-                                        {images?.map(({ title, src, href }) => (
-                                            <Insignia
-                                                imagePath={src}
-                                                href={href as string}
-                                                altText={title}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                            </li>
-                        )
-                    }
-                )
-            }
-        </ul>
-    </section>
+	<section class="data">
+		<h2>Cursos</h2>
+		<ul>
+			{
+				myCourses.map(({ title, institution, timeFrame, images }: Course) => {
+					return (
+						<li>
+							<div class="institution-icon">
+								{logoMap[institution]
+									? <Image src={logoMap[institution]} alt={institution} width={46} height={46} class="logo-img" />
+									: institution[0]
+								}
+							</div>
+							<div class="details">
+								<h3 class="course-title">{title}</h3>
+								<span class="institution">{institution}</span>
+								{timeFrame && (
+									<span class="date">
+										{timeFrame.startDate} – {timeFrame.endDate}
+									</span>
+								)}
+								{images && images.length > 0 && (
+									<div class="container-insignias">
+										{images.map(({ title, src, href }) => (
+											<Insignia
+												imagePath={src}
+												href={href as string}
+												altText={title}
+											/>
+										))}
+									</div>
+								)}
+							</div>
+						</li>
+					)
+				})
+			}
+		</ul>
+	</section>
 </Container>
 
 <style>
-    ul {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    li {
-        div {
-            margin-bottom: 5px;
+	ul {
+		display: flex;
+		flex-direction: column;
+	}
 
-            span {
-                font-weight: 500;
-                font-size: 0.9rem;
-                color: #666;
-            }
-        }
-    }
-    .container-insignias {
-        margin-top: 15px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 10px;
-    }
+	li {
+		display: flex;
+		gap: 1rem;
+		align-items: flex-start;
+		padding: 1.25rem 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	li:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+	li:first-child {
+		padding-top: 0;
+	}
+
+	.institution-icon {
+		width: 46px;
+		height: 46px;
+		border-radius: 8px;
+		background: var(--color-accent-light);
+		color: var(--color-primary);
+		font-weight: 700;
+		font-size: 1.2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		border: 1px solid var(--color-border);
+	}
+
+	.details {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+
+	.course-title {
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--color-primary);
+	}
+
+	.institution {
+		font-size: 0.9rem;
+		color: var(--color-text);
+	}
+
+	.date {
+		font-size: 0.8rem;
+		color: var(--color-accent);
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		font-weight: 500;
+		margin-top: 2px;
+	}
+
+	.container-insignias {
+		margin-top: 12px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	.logo-img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		border-radius: 8px;
+		padding: 4px;
+	}
 </style>

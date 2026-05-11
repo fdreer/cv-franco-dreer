@@ -8,145 +8,155 @@ import gdContadores from '@/assets/img/gd contadores.jpg'
 import saenz from '@/assets/img/saenz.jpg'
 
 const logoMap: Record<string, ImageMetadata> = {
-	'BIMEG Constructora': bimeg,
-	'Nexo Consultora': nexo,
-	'Gallo & Dreer Contadores': gdContadores,
-	'Santiago Saenz S.A.': saenz,
+    'BIMEG Constructora S.R.L.': bimeg,
+    'Nexo Consultora': nexo,
+    'Gallo & Dreer Contadores': gdContadores,
+    'Santiago Saenz S.A.': saenz
 }
 ---
 
 <Container>
-	<section class="data">
-		<h2>Experiencia</h2>
-		<ul>
-			{
-				myExperience.map(({ title, business, description, timeFrame }) => {
-					return (
-						<li>
-							<div class="company-icon">
-								{logoMap[business]
-									? <Image src={logoMap[business]} alt={business} width={46} height={46} class="logo-img" />
-									: business[0]
-								}
-							</div>
-							<div class="details">
-								<h3 class="job-title">{title}</h3>
-								<span class="company">{business}</span>
-								<span class="date">
-									{timeFrame.startDate} – {timeFrame.endDate}
-								</span>
-								{description && (
-									<ul class="desc">
-										{description.map((d) => (
-											<li>{d}</li>
-										))}
-									</ul>
-								)}
-							</div>
-						</li>
-					)
-				})
-			}
-		</ul>
-	</section>
+    <section class="data">
+        <h2>Experiencia</h2>
+        <ul>
+            {
+                myExperience.map(
+                    ({ title, business, description, timeFrame }) => {
+                        return (
+                            <li>
+                                <div class="company-icon">
+                                    {logoMap[business] ? (
+                                        <Image
+                                            src={logoMap[business]}
+                                            alt={business}
+                                            width={46}
+                                            height={46}
+                                            class="logo-img"
+                                        />
+                                    ) : (
+                                        business[0]
+                                    )}
+                                </div>
+                                <div class="details">
+                                    <h3 class="job-title">{title}</h3>
+                                    <span class="company">{business}</span>
+                                    <span class="date">
+                                        {timeFrame.startDate} –{' '}
+                                        {timeFrame.endDate}
+                                    </span>
+                                    {description && (
+                                        <ul class="desc">
+                                            {description.map(d => (
+                                                <li>{d}</li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+                            </li>
+                        )
+                    }
+                )
+            }
+        </ul>
+    </section>
 </Container>
 
 <style>
-	ul {
-		display: flex;
-		flex-direction: column;
-	}
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
 
-	ul > li {
-		display: flex;
-		gap: 1rem;
-		align-items: flex-start;
-		padding: 1.25rem 0;
-		border-bottom: 1px solid var(--color-border);
-	}
+    ul > li {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 1.25rem 0;
+        border-bottom: 1px solid var(--color-border);
+    }
 
-	ul > li:last-child {
-		border-bottom: none;
-		padding-bottom: 0;
-	}
+    ul > li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
 
-	ul > li:first-child {
-		padding-top: 0;
-	}
+    ul > li:first-child {
+        padding-top: 0;
+    }
 
-	.company-icon {
-		width: 46px;
-		height: 46px;
-		border-radius: 8px;
-		background: var(--color-accent-light);
-		color: var(--color-primary);
-		font-weight: 700;
-		font-size: 1.2rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-shrink: 0;
-		border: 1px solid var(--color-border);
-	}
+    .company-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 8px;
+        background: var(--color-accent-light);
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border: 1px solid var(--color-border);
+    }
 
-	.details {
-		display: flex;
-		flex-direction: column;
-		gap: 2px;
-	}
+    .details {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
 
-	.job-title {
-		font-size: 1rem;
-		font-weight: 600;
-		color: var(--color-primary);
-	}
+    .job-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-primary);
+    }
 
-	.company {
-		font-size: 0.9rem;
-		color: var(--color-text);
-	}
+    .company {
+        font-size: 0.9rem;
+        color: var(--color-text);
+    }
 
-	.date {
-		font-size: 0.8rem;
-		color: var(--color-accent);
-		text-transform: uppercase;
-		letter-spacing: 0.04em;
-		font-weight: 500;
-		margin-top: 2px;
-	}
+    .date {
+        font-size: 0.8rem;
+        color: var(--color-accent);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-weight: 500;
+        margin-top: 2px;
+    }
 
-	.desc {
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
-		margin-top: 8px;
-		padding-left: 0;
-		list-style: none;
-	}
+    .desc {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-top: 8px;
+        padding-left: 0;
+        list-style: none;
+    }
 
-	.desc li {
-		font-size: 0.95rem;
-		color: var(--color-muted);
-		padding-left: 1rem;
-		position: relative;
-		border-bottom: none;
-		padding-top: 0;
-		padding-bottom: 0;
-	}
+    .desc li {
+        font-size: 0.95rem;
+        color: var(--color-muted);
+        padding-left: 1rem;
+        position: relative;
+        border-bottom: none;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 
-	.desc li::before {
-		content: '·';
-		position: absolute;
-		left: 0;
-		color: var(--color-accent);
-		font-weight: 700;
-	}
+    .desc li::before {
+        content: '·';
+        position: absolute;
+        left: 0;
+        color: var(--color-accent);
+        font-weight: 700;
+    }
 
-	.logo-img {
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-		border-radius: 8px;
-		padding: 4px;
-	}
+    .logo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+        padding: 4px;
+    }
 </style>

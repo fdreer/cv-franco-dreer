@@ -10,6 +10,10 @@
     {
         "title": "Tango Software",
         "institution": "Tango University",
+        "timeFrame": {
+            "startDate": "Febrero 2024",
+            "endDate": "Julio 2024"
+        },
         "images": [
             {
                 "title": "Tango Inicial",
@@ -47,5 +51,13 @@
                 "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=ace64ba2d78ed1014e6c78ddcd278085e6f40d90"
             }
         ]
+    },
+    {
+        "title": "Business Analytics",
+        "institution": "AprenderAnalytics.com",
+        "timeFrame": {
+            "startDate": "Febrero 2025",
+            "endDate": "Mayo 2025"
+        }
     }
 ]

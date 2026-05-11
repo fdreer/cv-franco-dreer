@@ -1,9 +1,17 @@
 [
     {
+        "title": "Licenciatura en Administración de Empresas",
+        "timeFrame": {
+            "startDate": "Marzo 2026",
+            "endDate": "Actualidad"
+        },
+        "institution": "Universidad Católica de Salta"
+    },
+    {
         "title": "Contador Público",
         "timeFrame": {
-            "startDate": "2018",
-            "endDate": "2024"
+            "startDate": "Marzo 2018",
+            "endDate": "Junio 2024"
         },
         "institution": "Universidad Católica de Salta"
     },

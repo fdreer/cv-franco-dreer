@@ -1,42 +1,32 @@
 [
     {
-        "title": "Contador Público y Consultor de Odoo",
-        "business": "BIMEG Constructora",
+        "title": "Responsable de Administración y Transformación Digital",
+        "business": "BIMEG Constructora S.R.L.",
         "timeFrame": {
             "startDate": "Octubre 2025",
             "endDate": "Actualidad"
         },
         "description": [
-            "Responsable de la configuración del sistema ERP Odoo y la formación de los usuarios para su uso eficiente.",
-            "Desarrollos de tableros en Power BI.",
-            "Ejecución de la contabilidad general y liquidación de impuestos de la empresa.",
-            "Estandarización de reportes críticos para la toma de decisiones, tales como flujos de fondos y estructura de resultados por obra."
-        ]
-    },
-    {
-        "title": "Contador Público",
-        "business": "Nexo Consultora",
-        "timeFrame": {
-            "startDate": "Octubre 2025",
-            "endDate": "Actualidad"
-        },
-        "description": [
-            "Consultoría en aspectos impositivos, contables y de finanzas para diversos clientes.",
-            "Elaboración de balances, estados financieros y presentación de declaraciones juradas."
+            "Parametrización integral de sistema ERP (Odoo) y capacitación a usuarios finales para su adopción efectiva.",
+            "Desarrollo de dashboards en Power BI para control gerencial en tiempo real.",
+            "Automatización de procesos administrativos y contables, incorporando IA en flujos críticos.",
+            "Diseño y estandarización de reportes financieros: flujo de fondos, estructura de resultados por obra.",
+            "Contabilidad general y liquidación de impuestos de la empresa."
         ]
     },
     {
         "title": "Contador Público y Consultor de Tango Software",
         "business": "Gallo & Dreer Contadores",
         "timeFrame": {
-            "startDate": "Julio 2024",
-            "endDate": "Noviembre 2025"
+            "startDate": "Agosto 2024",
+            "endDate": "Diciembre 2025"
         },
         "description": [
-            "Parametrización, implementación y capacitación integral en todos los módulos del sistema Tango Software.",
-            "Gestión de la contabilidad y liquidación de impuestos.",
-            "Optimización de procesos y automatización de tareas administrativas/contables.",
-            "Integración de procesos con herramientas de BI para mejorar el reporting."
+            "Implementación, parametrización y puesta en marcha de Tango Gestión en sus módulos administrativos y contables.",
+            "Capacitación funcional a usuarios finales y soporte técnico post-implementación.",
+            "Desarrollos a medida integrados con Tango Gestión para automatización de tareas administrativas y contables.",
+            "Integración con Power BI para reporting sobre la base de datos del sistema.",
+            "Gestión de la contabilidad y liquidación de impuestos."
         ]
     },
     {

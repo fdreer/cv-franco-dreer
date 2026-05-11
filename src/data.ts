@@ -1,7 +1,7 @@
 const DATA = {
     ME: {
         NAME: 'Franco Dreer',
-        DESCRIPTION: 'Contador Público con perfil técnico',
+        DESCRIPTION: 'Contador Público con perfil TI',
         HOME: 'Salta Capital, Argentina'
     },
     LINKS: {

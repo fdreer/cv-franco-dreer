@@ -1,10 +1,12 @@
 ---
 import Container from '@/components/ui/Container.astro'
 import { Image } from 'astro:assets'
-import myCourses from '../../public/data/my-courses.json'
+import cvData from '@/data/cv.json'
 import Insignia from '@/components/Insignia.astro'
 import ucasal from '@/assets/img/ucasal.jpg'
 import tango from '@/assets/img/tango.jpg'
+
+const cv = cvData as CvData
 
 const logoMap: Record<string, ImageMetadata> = {
 	'Universidad Católica de Salta': ucasal,
@@ -17,38 +19,28 @@ const logoMap: Record<string, ImageMetadata> = {
 		<h2>Cursos</h2>
 		<ul>
 			{
-				myCourses.map(({ title, institution, timeFrame, images }: Course) => {
-					return (
-						<li>
-							<div class="institution-icon">
-								{logoMap[institution]
-									? <Image src={logoMap[institution]} alt={institution} width={46} height={46} class="logo-img" />
-									: institution[0]
-								}
-							</div>
-							<div class="details">
-								<h3 class="course-title">{title}</h3>
-								<span class="institution">{institution}</span>
-								{timeFrame && (
-									<span class="date">
-										{timeFrame.startDate} – {timeFrame.endDate}
-									</span>
-								)}
-								{images && images.length > 0 && (
-									<div class="container-insignias">
-										{images.map(({ title, src, href }) => (
-											<Insignia
-												imagePath={src}
-												href={href as string}
-												altText={title}
-											/>
-										))}
-									</div>
-								)}
-							</div>
-						</li>
-					)
-				})
+				cv.cursos.map(({ titulo, institucion, periodo, insignias }) => (
+					<li>
+						<div class="institution-icon">
+							{logoMap[institucion]
+								? <Image src={logoMap[institucion]} alt={institucion} width={46} height={46} class="logo-img" />
+								: institucion[0]
+							}
+						</div>
+						<div class="details">
+							<h3 class="course-title">{titulo}</h3>
+							<span class="institution">{institucion}</span>
+							<span class="date">{periodo}</span>
+							{insignias && insignias.length > 0 && (
+								<div class="container-insignias">
+									{insignias.map(({ titulo, src, href }) => (
+										<Insignia imagePath={src} href={href} altText={titulo} />
+									))}
+								</div>
+							)}
+						</div>
+					</li>
+				))
 			}
 		</ul>
 	</section>
@@ -110,8 +102,9 @@ const logoMap: Record<string, ImageMetadata> = {
 	}
 
 	.date {
-		font-size: 0.8rem;
-		color: var(--color-accent);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		color: var(--color-muted);
 		text-transform: uppercase;
 		letter-spacing: 0.04em;
 		font-weight: 500;

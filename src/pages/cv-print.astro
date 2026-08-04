@@ -1,0 +1,436 @@
+---
+import cvData from '@/data/cv.json'
+import foto from '@/assets/img/foto.jpeg'
+
+const cv = cvData as CvData
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>CV — {cv.nombre}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <article class="cv">
+            <header class="header">
+                <div>
+                    <div class="eyebrow">{cv.eyebrow}</div>
+                    <h1>{cv.nombre}</h1>
+                    <div class="role">{cv.titulo}</div>
+                </div>
+                <div class="photo">
+                    <img src={foto.src} alt={cv.nombre} />
+                </div>
+            </header>
+            <div class="rule-double"></div>
+
+            <div class="meta">
+                <div><span class="key">LOC</span>{cv.ubicacion}</div>
+                <div><span class="key">MAIL</span>{cv.email}</div>
+                <div class="right"><span class="key">Idiomas</span>{cv.idiomas}</div>
+            </div>
+
+            <section class="section">
+                <div class="row">
+                    <div class="section-label">Perfil</div>
+                    <div><p class="perfil">{cv.perfil}</p></div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="row">
+                    <div class="section-label">Experiencia</div>
+                    <div>
+                        {
+                            cv.experiencia.map(e => (
+                                <div class="exp-item">
+                                    <div class="exp-head">
+                                        <div class="exp-rol">{e.rol}</div>
+                                        <div class="exp-periodo">{e.periodo}</div>
+                                    </div>
+                                    <div class="exp-empresa">{e.empresa}</div>
+                                    <ul class="exp-bullets">
+                                        {e.bullets.map(b => <li>{b}</li>)}
+                                    </ul>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="row">
+                    <div class="section-label">Formación</div>
+                    <div>
+                        <div class="form-grid">
+                            <div class="form-col">
+                                {
+                                    cv.formacion.map(f => (
+                                        <div class="form-item">
+                                            <div class="titulo">{f.titulo}</div>
+                                            <div class="institucion">{f.institucion}</div>
+                                            <div class="periodo">{f.periodo}</div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                            <div>
+                                <div class="section-label cursos-label">Cursos</div>
+                                <div class="form-col">
+                                    {
+                                        cv.cursos.map(c => (
+                                            <div class="form-item">
+                                                <div class="titulo">{c.titulo}</div>
+                                                <div class="institucion">{c.institucion}</div>
+                                                <div class="periodo">{c.periodo}</div>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="row">
+                    <div class="section-label">Competencias</div>
+                    <div>
+                        <div class="chips">
+                            {cv.competencias.map(c => <span class="chip">{c}</span>)}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <style is:global>
+            :root {
+                --bg: #fafaf8;
+                --ink: #0d1117;
+                --ink-soft: #3a4049;
+                --body: #2a3038;
+                --muted: #8a909a;
+                --rule: #e0e0dd;
+                --rule-soft: #ececea;
+                --accent: #1f5d4c;
+                --accent-soft: #3a7a68;
+                --font-sans: 'Geist', 'Helvetica Neue', sans-serif;
+                --font-mono: 'Geist Mono', ui-monospace, monospace;
+
+                --page-w: 794px;
+                --page-pad-x: 56px;
+                --page-pad-top: 52px;
+                --page-pad-bottom: 44px;
+            }
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background: #e9e6e0;
+                min-height: 100vh;
+                font-family: var(--font-sans);
+                color: var(--ink);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 28px;
+                padding: 40px 20px;
+            }
+
+            .cv {
+                width: var(--page-w);
+                min-height: 1123px;
+                background: var(--bg);
+                padding: var(--page-pad-top) var(--page-pad-x) var(--page-pad-bottom);
+                box-shadow:
+                    0 2px 24px rgba(0, 0, 0, 0.06),
+                    0 0 0 1px rgba(0, 0, 0, 0.04);
+            }
+
+            /* ─── Header ───────────────────────────────────────────── */
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                gap: 24px;
+                padding-bottom: 20px;
+            }
+            .eyebrow {
+                font-family: var(--font-mono);
+                font-size: 10px;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: var(--accent);
+                font-weight: 600;
+            }
+            .header h1 {
+                margin: 12px 0 8px;
+                font-weight: 700;
+                font-size: 48px;
+                letter-spacing: -0.03em;
+                line-height: 0.98;
+                color: var(--ink);
+            }
+            .header .role {
+                font-size: 15px;
+                color: var(--ink-soft);
+                font-weight: 500;
+                letter-spacing: -0.005em;
+            }
+            .header .photo {
+                width: 96px;
+                height: 96px;
+                border-radius: 50%;
+                overflow: hidden;
+                flex-shrink: 0;
+                box-shadow: 0 0 0 1px var(--rule);
+            }
+            .header .photo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .rule-double {
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+                margin-bottom: 18px;
+            }
+            .rule-double::before {
+                content: '';
+                height: 1px;
+                background: var(--ink);
+            }
+            .rule-double::after {
+                content: '';
+                height: 1px;
+                background: var(--rule);
+            }
+
+            /* ─── Meta row ─────────────────────────────────────────── */
+            .meta {
+                display: flex;
+                gap: 28px;
+                flex-wrap: wrap;
+                padding-bottom: 22px;
+                margin-bottom: 28px;
+                font-family: var(--font-mono);
+                font-size: 10.5px;
+                color: var(--ink-soft);
+                border-bottom: 1px solid var(--rule-soft);
+            }
+            .meta .key {
+                color: var(--muted);
+                margin-right: 8px;
+                font-weight: 600;
+            }
+            .meta .right {
+                margin-left: auto;
+            }
+
+            /* ─── Section (label | content) ───────────────────────── */
+            .section {
+                margin-bottom: 28px;
+            }
+            .section:last-child {
+                margin-bottom: 0;
+            }
+            .section .row {
+                display: grid;
+                grid-template-columns: 120px 1fr;
+                gap: 22px;
+                align-items: start;
+            }
+            .section-label {
+                font-family: var(--font-mono);
+                font-size: 11px;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: var(--ink);
+                font-weight: 700;
+                padding-top: 6px;
+            }
+
+            .perfil {
+                margin: 0;
+                font-size: 13px;
+                line-height: 1.6;
+                color: var(--body);
+                max-width: 580px;
+                text-wrap: pretty;
+                font-weight: 400;
+            }
+
+            /* ─── Experiencia ─────────────────────────────────────── */
+            .exp-item {
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+                border-bottom: 1px solid var(--rule-soft);
+                break-inside: avoid;
+            }
+            .exp-item:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border-bottom: none;
+            }
+            .exp-head {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                gap: 12px;
+            }
+            .exp-rol {
+                font-size: 15px;
+                font-weight: 700;
+                letter-spacing: -0.015em;
+                color: var(--ink);
+                line-height: 1.25;
+            }
+            .exp-periodo {
+                font-family: var(--font-mono);
+                font-size: 10.5px;
+                color: var(--muted);
+                white-space: nowrap;
+                letter-spacing: 0.02em;
+                font-weight: 500;
+            }
+            .exp-empresa {
+                font-size: 13px;
+                color: var(--accent);
+                font-weight: 600;
+                margin: 4px 0 10px;
+                letter-spacing: -0.005em;
+            }
+            .exp-bullets {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .exp-bullets li {
+                font-size: 12px;
+                line-height: 1.55;
+                color: var(--body);
+                padding-left: 18px;
+                position: relative;
+                margin-bottom: 4px;
+                text-wrap: pretty;
+            }
+            .exp-bullets li::before {
+                content: '–';
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: var(--accent-soft);
+                font-family: var(--font-mono);
+                font-size: 12px;
+                line-height: 1.55;
+                font-weight: 500;
+            }
+
+            /* ─── Formación + Cursos ──────────────────────────────── */
+            .form-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+            .form-col {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .form-item {
+                break-inside: avoid;
+            }
+            .form-item .titulo {
+                font-size: 13px;
+                font-weight: 700;
+                line-height: 1.3;
+                letter-spacing: -0.012em;
+                color: var(--ink);
+            }
+            .form-item .institucion {
+                font-size: 11.5px;
+                color: var(--ink-soft);
+                margin-top: 1px;
+            }
+            .form-item .periodo {
+                font-family: var(--font-mono);
+                font-size: 10px;
+                color: var(--muted);
+                margin-top: 4px;
+                letter-spacing: 0.02em;
+                font-weight: 500;
+            }
+            .cursos-label {
+                margin-bottom: 12px;
+                padding-top: 0;
+            }
+
+            /* ─── Competencias ────────────────────────────────────── */
+            .chips {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .chip {
+                font-size: 11.5px;
+                padding: 6px 12px;
+                font-weight: 500;
+                border: 1px solid var(--rule);
+                border-radius: 999px;
+                color: var(--ink);
+                background: #fff;
+                letter-spacing: -0.005em;
+            }
+
+            /* ─── Print ───────────────────────────────────────────── */
+            @page {
+                size: A4;
+                margin: 14mm 14mm;
+            }
+            @media print {
+                body {
+                    background: white;
+                    padding: 0;
+                    gap: 0;
+                }
+                .cv {
+                    box-shadow: none;
+                    width: 100%;
+                    min-height: 0;
+                    padding: 0;
+                    background: white;
+                }
+                .section,
+                .exp-item,
+                .form-item {
+                    break-inside: avoid;
+                }
+                .header {
+                    break-after: avoid;
+                }
+            }
+        </style>
+    </body>
+</html>

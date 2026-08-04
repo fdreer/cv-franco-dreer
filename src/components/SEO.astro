@@ -1,5 +1,7 @@
 ---
-import DATA from '@/data'
+import cvData from '@/data/cv.json'
+
+const cv = cvData as CvData
 
 interface Props {
 	title: string
@@ -47,7 +49,7 @@ const { title, description, canonical } = Astro.props
 <meta name="og:title" content={title} />
 <meta name="og:description" content={description} />
 <meta name="og:url" content={Astro.url} />
-<meta name="og:site_name" content=`Cv de ${DATA.ME.NAME}` />
+<meta name="og:site_name" content=`Cv de ${cv.nombre}` />
 <meta name="og:type" content="website" />
 <meta name="og:locale" content="es_ES" />
 

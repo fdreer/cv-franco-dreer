@@ -2,6 +2,9 @@
 import Footer from '@/components/Footer.astro'
 import SEO from '@/components/SEO.astro'
 import DATA from '@/data'
+import cvData from '@/data/cv.json'
+
+const cv = cvData as CvData
 
 interface Props {
     title: string
@@ -16,7 +19,7 @@ const {title} = Astro.props
         <SEO
             canonical=`${DATA.URL_PRODUCTION}`
             title={title}
-            description=`Esta es la web oficial del currículum vitae de ${DATA.ME.NAME}`
+            description=`Esta es la web oficial del currículum vitae de ${cv.nombre}`
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

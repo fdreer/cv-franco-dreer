@@ -5,10 +5,12 @@ import Formation from '@/sections/Formation.astro'
 import ProfessionalProfile from '@/sections/ProfessionalProfile.astro'
 import Courses from '@/sections/Courses.astro'
 import Experience from '@/sections/Experience.astro'
-import DATA from '@/data'
+import cvData from '@/data/cv.json'
+
+const cv = cvData as CvData
 ---
 
-<Layout title=`Cv de ${DATA.ME.NAME}`>
+<Layout title=`Cv de ${cv.nombre}`>
     <GeneralInfo />
     <ProfessionalProfile />
     <Experience />

@@ -1,18 +1,20 @@
 ---
 import Cv from '@/icons/Cv.astro'
 import Square from '../ui/Square.astro'
-import DATA from '@/data'
+import cvData from '@/data/cv.json'
 
 import '@/components/buttons/styles.css'
 // URL para descargar cv en pdf --> blob:https://resume.io/e511240d-2443-4337-b470-fc86697547d3
+
+const cv = cvData as CvData
 ---
 
 <Square>
 	<a
 		class="social-button"
 		target="_blank"
-		href=`${DATA.LINKS.CV_PDF}`
-		title=`Descargar Cv de ${DATA.ME.NAME}`
+		href=`${cv.links.cv_pdf}`
+		title=`Descargar Cv de ${cv.nombre}`
 	>
 		<Cv />
 	</a>

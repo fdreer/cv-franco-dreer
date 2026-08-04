@@ -19,27 +19,44 @@ const OUT = path.join(ROOT, "public", "cv.pdf");
 const PORT = Number(process.env.PORT) || 4321;
 const TARGET = `http://localhost:${PORT}/cv-print`;
 
-// Verifica que el puerto esté libre intentando bindearlo nosotros mismos.
-// Sin esto, si ya hay algo escuchando ahí (p.ej. un `npm run dev` en otra
-// terminal), waitForServer se conforma con que ESE server responda .ok y
-// terminamos pisando public/cv.pdf con contenido ajeno, sin ningún error.
-function ensurePortFree(port) {
+// Verifica que el puerto esté libre intentando bindearlo nosotros mismos, en
+// las dos direcciones que resuelve "localhost". Bindear solo el wildcard no
+// alcanza: en Windows, bindear "::" (o "0.0.0.0") NO colisiona con un proceso
+// que ya bindeó la dirección específica "::1" — que es justo lo que hace
+// `astro dev`. Sin este chequeo por dirección, si ya hay algo escuchando ahí
+// (p.ej. un `npm run dev` en otra terminal), waitForServer se conforma con
+// que ESE server responda .ok y terminamos pisando public/cv.pdf con
+// contenido ajeno, sin ningún error.
+function checkHostFree(port, host) {
   return new Promise((resolve, reject) => {
     const tester = net.createServer();
     tester.once("error", (err) => {
       if (err.code === "EADDRINUSE") {
-        reject(new Error(
-          `el puerto ${port} está ocupado — cerrá el \`npm run dev\` que tengas abierto, o corré \`PORT=4322 npm run pdf\``
-        ));
-      } else {
         reject(err);
+      } else {
+        // En algunas máquinas ::1 no está disponible (IPv6 deshabilitado):
+        // un error que no sea EADDRINUSE no significa "puerto ocupado", así
+        // que no hacemos fallar el comando por esto.
+        resolve();
       }
     });
     tester.once("listening", () => {
-      tester.close(resolve);
+      tester.close(() => resolve());
     });
-    tester.listen(port);
+    tester.listen(port, host);
   });
+}
+
+async function ensurePortFree(port) {
+  for (const host of ["127.0.0.1", "::1"]) {
+    try {
+      await checkHostFree(port, host);
+    } catch {
+      throw new Error(
+        `el puerto ${port} está ocupado (${host}) — cerrá el \`npm run dev\` que tengas abierto, o corré \`$env:PORT=4322; npm run pdf\``
+      );
+    }
+  }
 }
 
 async function waitForServer(target, timeoutMs = 60_000) {

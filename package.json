@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
-        "build": "astro build",
+        "build": "npm run check && astro build",
         "preview": "astro preview",
         "astro": "astro",
         "check": "node scripts/check-cv.mjs",

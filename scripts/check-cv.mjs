@@ -52,6 +52,32 @@ insignias.forEach((ins, i) => {
 assert.ok(cv.competencias?.length, "competencias: vacío");
 cv.competencias.forEach((c, i) => str(c, `competencias[${i}]`));
 
+// Los logos de empresas/instituciones viven en el logoMap de cada sección
+// .astro, indexado por el string exacto de empresa/institucion de cv.json.
+// Si no coincide, el logo cae en silencio al fallback (una letra en un
+// cuadrito) — nada rompe, así que esto es un warning, no un error: hay
+// entradas (ej. AprenderAnalytics.com) sin logo a propósito.
+function logoMapKeys(relPath) {
+  const src = fs.readFileSync(path.join(ROOT, relPath), "utf8");
+  const match = src.match(/logoMap[^=]*=\s*{([^}]*)}/);
+  if (!match) return new Set();
+  return new Set([...match[1].matchAll(/['"]([^'"]+)['"]\s*:/g)].map((m) => m[1]));
+}
+
+function warnMissingLogos(entries, field, relPath) {
+  const keys = logoMapKeys(relPath);
+  const missing = [...new Set(entries.map((e) => e[field]))].filter((v) => !keys.has(v));
+  if (missing.length) {
+    console.warn(
+      `aviso: sin logo en ${relPath} para ${missing.map((v) => `"${v}"`).join(", ")}`
+    );
+  }
+}
+
+warnMissingLogos(cv.experiencia, "empresa", path.join("src", "sections", "Experience.astro"));
+warnMissingLogos(cv.formacion, "institucion", path.join("src", "sections", "Formation.astro"));
+warnMissingLogos(cv.cursos, "institucion", path.join("src", "sections", "Courses.astro"));
+
 console.log(
   `cv.json OK — ${cv.experiencia.length} experiencias, ${cv.formacion.length} formaciones, ` +
     `${cv.cursos.length} cursos (${insignias.length} insignias), ${cv.competencias.length} competencias`

@@ -12,8 +12,10 @@ npm run dev      # ver la web en localhost:4321 y el CV en localhost:4321/cv-pri
 npm run pdf      # regenerar public/cv.pdf
 ```
 
+> `npm install` no descarga Chromium (ver `.puppeteerrc.cjs`): es a propósito, para no romper el build de Cloudflare. Si `npm run pdf` falla con un error de que no encuentra Chrome, corré una vez `npx puppeteer browsers install chrome`.
+
 Después de correr `npm run pdf`, commitear `public/cv.pdf`: es el archivo que descarga la gente desde el botón "Descargar CV".
 
 ## Deploy
 
-Push a `master` → Cloudflare Pages. El build de producción no ejecuta Puppeteer; el PDF va commiteado en el repo.
+Push a `master` → Cloudflare Pages. El `astro build` de producción no ejecuta Puppeteer; el PDF va commiteado en el repo. Sí corre `npm install`, pero no descarga Chromium (ver nota de `.puppeteerrc.cjs` arriba).

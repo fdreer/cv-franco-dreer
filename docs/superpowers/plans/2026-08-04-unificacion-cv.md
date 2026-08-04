@@ -949,7 +949,9 @@ Expected: `built public/cv.pdf (XXXkb)` y el proceso termina solo (no queda un `
 
 Abrir `public/cv.pdf` y compararlo con `C:\Users\franc\DEV\generador-cv\dist\cv.pdf`.
 
-Expected: A4, **1 sola página**, fondo crema, foto visible, tipografía Geist (no una fallback tipo Arial — si las letras se ven distintas, las fuentes no cargaron y hay que subir el timeout de `networkidle0`), los 8 chips completos sin cortarse.
+Expected: A4, **2 páginas** — igual que `generador-cv/dist/cv.pdf` y que el `public/cv.pdf` que Franco venía usando. El contenido actual no entra en una hoja y **el CSS no se toca para forzarlo**: el diseño de `cv-print.astro` es un port fiel de un diseño ya aprobado. Verificar además: fondo crema, foto visible, tipografía Geist (no una fallback tipo Arial — si las letras se ven distintas, las fuentes no cargaron y hay que subir el timeout de `networkidle0`), los 8 chips completos sin cortarse.
+
+Para contar páginas sin browser: los PDFs están comprimidos, así que `grep` no sirve. Inflar los streams con `zlib` y contar `/Count`.
 
 - [ ] **Step 6: Commit**
 

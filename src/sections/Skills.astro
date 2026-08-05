@@ -1,0 +1,34 @@
+---
+import Container from '@/components/ui/Container.astro'
+import cvData from '@/data/cv.json'
+
+const cv = cvData as CvData
+---
+
+<Container>
+    <section class="data">
+        <h2>Competencias</h2>
+        <div class="chips">
+            {cv.competencias.map(c => <span class="chip">{c}</span>)}
+        </div>
+    </section>
+</Container>
+
+<style>
+    .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .chip {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+        font-weight: 500;
+        border: 1px solid var(--color-border);
+        border-radius: 999px;
+        color: var(--color-primary);
+        background: #fff;
+        letter-spacing: -0.005em;
+    }
+</style>

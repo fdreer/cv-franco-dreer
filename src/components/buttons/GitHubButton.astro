@@ -1,17 +1,19 @@
 ---
 import GitHub from '@/icons/GitHub.astro'
 import Square from '../ui/Square.astro'
-import DATA from '@/data'
+import cvData from '@/data/cv.json'
 
 import '@/components/buttons/styles.css'
+
+const cv = cvData as CvData
 ---
 
 <Square>
     <a
         class="social-button"
-        href=`${DATA.LINKS.GITHUB}`
+        href=`${cv.links.github}`
         target="_blank"
-        title=`Visitar perfil de ${DATA.ME.NAME} en GitHub`
+        title=`Visitar perfil de ${cv.nombre} en GitHub`
     >
         <GitHub />
     </a>

@@ -3,15 +3,17 @@ import LinkedIn from '@/icons/LinkedIn.astro'
 import Square from '../ui/Square.astro'
 
 import '@/components/buttons/styles.css'
-import DATA from '@/data'
+import cvData from '@/data/cv.json'
+
+const cv = cvData as CvData
 ---
 
 <Square>
 	<a
 		class="social-button"
-		href=`${DATA.LINKS.LINKEDIN}`
+		href=`${cv.links.linkedin}`
 		target="_blank"
-		title=`Visitar perfil de ${DATA.ME.NAME} en LinkedIn`
+		title=`Visitar perfil de ${cv.nombre} en LinkedIn`
 	>
 		<LinkedIn />
 	</a>

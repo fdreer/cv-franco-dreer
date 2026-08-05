@@ -1,11 +1,13 @@
 ---
 import Container from '@/components/ui/Container.astro'
 import { Image } from 'astro:assets'
-import myExperience from '../../public/data/my-experience.json'
+import cvData from '@/data/cv.json'
 import bimeg from '@/assets/img/bimeg.jpg'
 import nexo from '@/assets/img/nexo.png'
 import gdContadores from '@/assets/img/gd contadores.jpg'
 import saenz from '@/assets/img/saenz.jpg'
+
+const cv = cvData as CvData
 
 const logoMap: Record<string, ImageMetadata> = {
     'BIMEG Constructora S.R.L.': bimeg,
@@ -20,42 +22,33 @@ const logoMap: Record<string, ImageMetadata> = {
         <h2>Experiencia</h2>
         <ul>
             {
-                myExperience.map(
-                    ({ title, business, description, timeFrame }) => {
-                        return (
-                            <li>
-                                <div class="company-icon">
-                                    {logoMap[business] ? (
-                                        <Image
-                                            src={logoMap[business]}
-                                            alt={business}
-                                            width={46}
-                                            height={46}
-                                            class="logo-img"
-                                        />
-                                    ) : (
-                                        business[0]
-                                    )}
-                                </div>
-                                <div class="details">
-                                    <h3 class="job-title">{title}</h3>
-                                    <span class="company">{business}</span>
-                                    <span class="date">
-                                        {timeFrame.startDate} –{' '}
-                                        {timeFrame.endDate}
-                                    </span>
-                                    {description && (
-                                        <ul class="desc">
-                                            {description.map(d => (
-                                                <li>{d}</li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </div>
-                            </li>
-                        )
-                    }
-                )
+                cv.experiencia.map(({ rol, empresa, periodo, bullets }) => (
+                    <li>
+                        <div class="company-icon">
+                            {logoMap[empresa] ? (
+                                <Image
+                                    src={logoMap[empresa]}
+                                    alt={empresa}
+                                    width={46}
+                                    height={46}
+                                    class="logo-img"
+                                />
+                            ) : (
+                                empresa[0]
+                            )}
+                        </div>
+                        <div class="details">
+                            <h3 class="job-title">{rol}</h3>
+                            <span class="company">{empresa}</span>
+                            <span class="date">{periodo}</span>
+                            <ul class="desc">
+                                {bullets.map(b => (
+                                    <li>{b}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </li>
+                ))
             }
         </ul>
     </section>
@@ -113,12 +106,14 @@ const logoMap: Record<string, ImageMetadata> = {
 
     .company {
         font-size: 0.9rem;
-        color: var(--color-text);
+        color: var(--color-accent);
+        font-weight: 600;
     }
 
     .date {
-        font-size: 0.8rem;
-        color: var(--color-accent);
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        color: var(--color-muted);
         text-transform: uppercase;
         letter-spacing: 0.04em;
         font-weight: 500;
@@ -136,7 +131,7 @@ const logoMap: Record<string, ImageMetadata> = {
 
     .desc li {
         font-size: 0.95rem;
-        color: var(--color-muted);
+        color: var(--color-text);
         padding-left: 1rem;
         position: relative;
         border-bottom: none;

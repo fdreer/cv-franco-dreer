@@ -1,18 +1,14 @@
 ---
 import Container from '@/components/ui/Container.astro'
+import cvData from '@/data/cv.json'
+
+const cv = cvData as CvData
 ---
 
 <Container>
     <section class="data">
         <h2>Perfil profesional</h2>
-        <p>
-            Analista de negocio y operaciones, Contador Público. Uso IA para
-            automatizar el trabajo manual, desarrollos propios, integraciones y
-            herramientas que reemplazan tareas repetitivas. Monitoreo costos,
-            avance y performance del negocio en dashboards, detecto desvíos y
-            sobrecostos, y traduzco los datos en recomendaciones concretas para
-            la dirección.
-        </p>
+        <p>{cv.perfil}</p>
     </section>
 </Container>
 

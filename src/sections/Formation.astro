@@ -1,9 +1,11 @@
 ---
 import Container from '@/components/ui/Container.astro'
 import { Image } from 'astro:assets'
-import myFormation from '../../public/data/my-formation.json'
+import cvData from '@/data/cv.json'
 import ucasal from '@/assets/img/ucasal.jpg'
 import digitalHouse from '@/assets/img/digital house.jpg'
+
+const cv = cvData as CvData
 
 const logoMap: Record<string, ImageMetadata> = {
 	'Universidad Católica de Salta': ucasal,
@@ -16,28 +18,21 @@ const logoMap: Record<string, ImageMetadata> = {
 		<h2>Formación</h2>
 		<ul>
 			{
-				myFormation.map(({ title, institution, description, timeFrame }: Formation) => {
-					return (
-						<li>
-							<div class="institution-icon">
-							{logoMap[institution]
-								? <Image src={logoMap[institution]} alt={institution} width={46} height={46} class="logo-img" />
-								: institution[0]
+				cv.formacion.map(({ titulo, institucion, periodo }) => (
+					<li>
+						<div class="institution-icon">
+							{logoMap[institucion]
+								? <Image src={logoMap[institucion]} alt={institucion} width={46} height={46} class="logo-img" />
+								: institucion[0]
 							}
 						</div>
-							<div class="details">
-								<h3 class="degree-title">{title}</h3>
-								<span class="institution">{institution}</span>
-								{timeFrame && (
-									<span class="date">
-										{timeFrame.startDate} – {timeFrame.endDate}
-									</span>
-								)}
-								{description && <p class="desc">{description}</p>}
-							</div>
-						</li>
-					)
-				})
+						<div class="details">
+							<h3 class="degree-title">{titulo}</h3>
+							<span class="institution">{institucion}</span>
+							<span class="date">{periodo}</span>
+						</div>
+					</li>
+				))
 			}
 		</ul>
 	</section>
@@ -99,18 +94,13 @@ const logoMap: Record<string, ImageMetadata> = {
 	}
 
 	.date {
-		font-size: 0.8rem;
-		color: var(--color-accent);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		color: var(--color-muted);
 		text-transform: uppercase;
 		letter-spacing: 0.04em;
 		font-weight: 500;
 		margin-top: 2px;
-	}
-
-	.desc {
-		font-size: 0.95rem;
-		color: var(--color-muted);
-		margin-top: 6px;
 	}
 
 	.logo-img {

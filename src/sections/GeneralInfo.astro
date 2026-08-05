@@ -44,15 +44,8 @@ const cv = cvData as CvData
         </div>
 
         <div class="meta">
-            <span class="meta-item">
-                <span class="meta-key">LOC</span>{cv.ubicacion}
-            </span>
-            <a href={`mailto:${cv.email}`} class="meta-item meta-link">
-                <span class="meta-key">MAIL</span>{cv.email}
-            </a>
-            <span class="meta-item meta-item--right">
-                <span class="meta-key">IDIOMAS</span>{cv.idiomas}
-            </span>
+            <span>{cv.ubicacion}</span>
+            <a href={`mailto:${cv.email}`} class="meta-link">{cv.email}</a>
         </div>
     </section>
 </Container>
@@ -110,26 +103,16 @@ const cv = cvData as CvData
         margin-left: auto;
     }
 
-    /* Fila de datos: mono, etiqueta gris + valor. Idiomas se va a la derecha,
-       igual que en el impreso. */
+    /* Ubicación y mail, en mono como el resto de los metadatos de la página. */
     .meta {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem 1.75rem;
-        padding: 0.85rem 0 0;
+        padding-top: 0.85rem;
         /* sin borde inferior: la regla la pone el .data de la sección siguiente */
         font-family: var(--font-mono);
         font-size: 0.72rem;
         color: var(--color-text);
-    }
-    .meta-key {
-        margin-right: 8px;
-        color: var(--color-muted);
-        font-weight: 600;
-        letter-spacing: 0.04em;
-    }
-    .meta-item--right {
-        margin-left: auto;
     }
     .meta-link {
         color: inherit;
@@ -206,9 +189,6 @@ const cv = cvData as CvData
         }
         .meta {
             justify-content: center;
-        }
-        .meta-item--right {
-            margin-left: 0;
         }
     }
 </style>

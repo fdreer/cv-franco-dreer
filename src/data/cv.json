@@ -120,7 +120,7 @@
     "competencias": [
         {
             "categoria": "Automatización e integración",
-            "items": ["n8n", "Google Apps Script", "integración mediante API"]
+            "items": ["n8n", "Google Apps Script"]
         },
         {
             "categoria": "Sistemas de gestión",
@@ -132,7 +132,7 @@
         },
         {
             "categoria": "Información de gestión",
-            "items": ["Excel", "Power BI", "Reportes financieros", "Resultados por obra", "Flujo de fondos proyectado"]
+            "items": ["Excel", "Power BI"]
         }
     ]
 }

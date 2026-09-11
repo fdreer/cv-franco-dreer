@@ -16,6 +16,8 @@ const numberLikes = value ? parseInt(value) : 0
         display: inline-flex;
         align-items: center;
         gap: 6px;
+        min-width: 44px;
+        min-height: 44px;
         background: none;
         border: 2px solid var(--color-border);
         border-radius: 20px;
@@ -53,6 +55,11 @@ const numberLikes = value ? parseInt(value) : 0
         25%  { transform: scale(1.5) rotate(-20deg); }
         60%  { transform: scale(0.85) rotate(8deg); }
         100% { transform: scale(1) rotate(0deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #like-btn.pop svg {
+            animation: none;
+        }
     }
 </style>
 

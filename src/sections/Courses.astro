@@ -16,10 +16,10 @@ const logoMap: Record<string, ImageMetadata> = {
 
 <Container>
 	<section class="data">
-		<h2>Cursos</h2>
+		<h2>Certificaciones y formación complementaria</h2>
 		<ul>
 			{
-				cv.cursos.map(({ titulo, institucion, periodo, insignias }) => (
+				cv.cursos.map(({ titulo, institucion, periodo, detalle, insignias }) => (
 					<li>
 						<div class="institution-icon">
 							{logoMap[institucion]
@@ -31,6 +31,7 @@ const logoMap: Record<string, ImageMetadata> = {
 							<h3 class="course-title">{titulo}</h3>
 							<span class="institution">{institucion}</span>
 							<span class="date">{periodo}</span>
+							{detalle && <p class="detail">{detalle}</p>}
 							{insignias && insignias.length > 0 && (
 								<div class="container-insignias">
 									{insignias.map(({ titulo, src, href }) => (
@@ -109,6 +110,13 @@ const logoMap: Record<string, ImageMetadata> = {
 		letter-spacing: 0.04em;
 		font-weight: 500;
 		margin-top: 2px;
+	}
+
+	.detail {
+		margin-top: 0.55rem;
+		font-size: 0.86rem;
+		line-height: 1.5;
+		color: var(--color-text);
 	}
 
 	.container-insignias {

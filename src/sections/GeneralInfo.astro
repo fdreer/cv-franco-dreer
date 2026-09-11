@@ -18,14 +18,15 @@ const cv = cvData as CvData
             <article class="me">
                 <h1>{cv.nombre}</h1>
                 <p class="role">{cv.titulo}</p>
+                <p class="subtitle">{cv.subtitulo}</p>
                 <footer>
-                    <a href={cv.links.linkedin} target="_blank" class="link-btn" title="LinkedIn">
+                    <a href={cv.links.linkedin} target="_blank" rel="noreferrer" class="link-btn" title="LinkedIn">
                         <LinkedIn /> LinkedIn
                     </a>
-                    <a href={cv.links.github} target="_blank" class="link-btn" title="GitHub">
+                    <a href={cv.links.github} target="_blank" rel="noreferrer" class="link-btn" title="GitHub">
                         <GitHub /> GitHub
                     </a>
-                    <a href={cv.links.cv_pdf} target="_blank" class="link-btn link-btn--cv" title="Descargar CV">
+                    <a href={cv.links.cv_pdf} target="_blank" rel="noreferrer" class="link-btn link-btn--cv" title="Abrir CV en PDF">
                         <Cv /> Descargar CV
                     </a>
                     <div class="stats-row">
@@ -76,11 +77,17 @@ const cv = cvData as CvData
     }
     .role {
         margin-top: 0.55rem;
-        font-size: 0.92rem;
-        font-weight: 500;
+        font-size: 1.15rem;
+        font-weight: 650;
         letter-spacing: -0.005em;
-        color: var(--color-text);
+        color: var(--color-accent);
         text-wrap: pretty;
+    }
+    .subtitle {
+        margin-top: 0.35rem;
+        font-size: 0.88rem;
+        line-height: 1.45;
+        color: var(--color-text);
     }
 
     /* Solo la foto: la fila de like/views vive abajo con los botones, para no
@@ -133,6 +140,7 @@ const cv = cvData as CvData
         display: inline-flex;
         align-items: center;
         gap: 6px;
+        min-height: 44px;
         padding: 5px 14px;
         border-radius: 999px;
         border: 1px solid var(--color-border);
@@ -152,6 +160,11 @@ const cv = cvData as CvData
     .link-btn:hover {
         border-color: var(--color-accent);
         color: var(--color-accent);
+    }
+    .link-btn:focus-visible,
+    .meta-link:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 3px;
     }
     .link-btn--cv {
         border-color: var(--color-accent);

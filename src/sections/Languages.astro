@@ -1,0 +1,20 @@
+---
+import Container from '@/components/ui/Container.astro'
+import cvData from '@/data/cv.json'
+
+const cv = cvData as CvData
+---
+
+<Container>
+    <section class="data">
+        <h2>Idiomas</h2>
+        <p>{cv.idiomas}</p>
+    </section>
+</Container>
+
+<style>
+    p {
+        font-size: 0.95rem;
+        color: var(--color-text);
+    }
+</style>

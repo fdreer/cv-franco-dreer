@@ -18,13 +18,20 @@ type CvInsignia = {
 }
 
 type CvCurso = CvFormacion & {
+    detalle?: string
     insignias?: CvInsignia[]
+}
+
+type CvCompetencia = {
+    categoria: string
+    items: string[]
 }
 
 type CvData = {
     nombre: string
     eyebrow: string
     titulo: string
+    subtitulo: string
     ubicacion: string
     email: string
     idiomas: string
@@ -33,5 +40,5 @@ type CvData = {
     experiencia: CvExperiencia[]
     formacion: CvFormacion[]
     cursos: CvCurso[]
-    competencias: string[]
+    competencias: CvCompetencia[]
 }

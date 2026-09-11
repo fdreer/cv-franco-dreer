@@ -1,47 +1,47 @@
 {
     "nombre": "Franco Dreer",
     "eyebrow": "Currículum",
-    "titulo": "Analista de Negocio y Operaciones · Contador Público | Datos y Automatización",
+    "titulo": "Analista de Negocio y Procesos",
+    "subtitulo": "Contador Público | Automatización e integración de sistemas",
     "ubicacion": "Salta, Argentina",
     "email": "francodreer@gmail.com",
-    "idiomas": "ES – EN B1",
+    "idiomas": "Español | Inglés B1",
     "links": {
         "linkedin": "https://www.linkedin.com/in/francodreer",
         "github": "https://github.com/fdreer",
         "cv_pdf": "/cv.pdf"
     },
-    "perfil": "Analista de negocio y operaciones, Contador Público. Uso IA para automatizar el trabajo manual, desarrollo herramientas que integran sistemas y reemplazan tareas repetitivas. Monitoreo costos, avance y performance del negocio en dashboards, detecto desvíos y sobrecostos, y traduzco los datos en recomendaciones concretas para la dirección.",
+    "perfil": "Contador Público con experiencia en análisis y mejora de procesos administrativos y financieros, automatización e integración de sistemas. Combino conocimiento del negocio y capacidad técnica para identificar necesidades e implementar soluciones con Odoo, Tango Gestión y desarrollos a medida. También cuento con experiencia en capacitación de usuarios y elaboración de información económica y financiera para la gestión.",
     "experiencia": [
         {
             "rol": "Responsable de Administración y Transformación Digital",
             "empresa": "BIMEG Constructora S.R.L.",
-            "periodo": "Dic 2025 – Presente",
+            "periodo": "Diciembre 2025 – Agosto 2026",
             "bullets": [
-                "Rediseño y automatización de procesos con IA, mediante integraciones y desarrollos propios.",
-                "Gestión de procesos operativos y administrativos.",
-                "Elaboración de reportes financieros automatizados y análisis de datos para la dirección.",
-                "Contabilidad general y liquidación de impuestos de la empresa.",
-                "Parametrización y administración del ERP, y capacitación a los usuarios finales."
+                "Automaticé procesos administrativos mediante integraciones entre sistemas y desarrollos a medida, a partir de necesidades operativas de la empresa.",
+                "Configuré y administré Odoo para la gestión administrativa y contable, y capacité a usuarios en su utilización.",
+                "Desarrollé reportes de resultados generales y por obra, y un flujo de fondos proyectado, integrando información de Odoo para apoyar el seguimiento económico y financiero.",
+                "Gestioné procesos operativos, administrativos y contables, incluida la liquidación impositiva de la empresa."
             ]
         },
         {
             "rol": "Contador Público y Consultor funcional ERP – Tango Gestión",
             "empresa": "Gallo & Dreer Contadores",
-            "periodo": "Ago 2024 – Nov 2025",
+            "periodo": "Agosto 2024 – Noviembre 2025",
             "bullets": [
-                "Implementación y parametrización de Tango Gestión y capacitación a los usuarios finales.",
-                "Automatización de tareas administrativas mediante desarrollos a medida e integraciones.",
-                "Asesoramiento a clientes en el aprovechamiento de su información para la gestión.",
-                "Contabilidad y liquidación impositiva de una cartera de clientes."
+                "Implementé y parametricé Tango Gestión para clientes, y capacité a usuarios finales en su utilización.",
+                "Desarrollé automatizaciones e integraciones para tareas administrativas, adaptadas a las necesidades de los clientes.",
+                "Asesoré a clientes en el aprovechamiento de su información administrativa y contable para la gestión.",
+                "Gestioné tareas contables y liquidaciones impositivas para una cartera de clientes."
             ]
         },
         {
             "rol": "Auxiliar Contable (pasantía)",
             "empresa": "Santiago Saenz S.A.",
-            "periodo": "2023 – 2024",
+            "periodo": "Enero 2024 – Julio 2024",
             "bullets": [
-                "Conciliaciones de cuentas y soporte operativo al área de administración y finanzas.",
-                "Registración y control de comprobantes de facturación."
+                "Realicé conciliaciones de cuentas y brindé soporte operativo al área de administración y finanzas.",
+                "Registré y controlé comprobantes de facturación."
             ]
         }
     ],
@@ -49,24 +49,25 @@
         {
             "titulo": "Licenciatura en Administración de Empresas",
             "institucion": "Universidad Católica de Salta",
-            "periodo": "Mar 2026 – Presente"
+            "periodo": "Marzo 2026 – Presente"
         },
         {
             "titulo": "Contador Público",
             "institucion": "Universidad Católica de Salta",
-            "periodo": "Feb 2018 – Jun 2024"
+            "periodo": "Febrero 2018 – Junio 2024"
         },
         {
             "titulo": "Certified Tech Developer",
             "institucion": "Digital House",
-            "periodo": "Feb 2022 – Sep 2023"
+            "periodo": "Febrero 2022 – Septiembre 2023"
         }
     ],
     "cursos": [
         {
             "titulo": "Tango Gestión",
             "institucion": "Tango University",
-            "periodo": "Feb 2024 – Jul 2024",
+            "periodo": "Febrero 2024 – Julio 2024",
+            "detalle": "Credenciales: Tango Inicial, Tango Operador, Tango Operador Avanzado, Tango Operador Contable, Técnico Tango, Técnico Tango Avanzado y Tango Consultor.",
             "insignias": [
                 {
                     "titulo": "Tango Inicial",
@@ -108,22 +109,30 @@
         {
             "titulo": "Curso de Inglés B1",
             "institucion": "Universidad Católica de Salta",
-            "periodo": "Feb 2020 – Dic 2020"
+            "periodo": "Febrero 2020 – Diciembre 2020"
         },
         {
             "titulo": "Business Analytics",
             "institucion": "AprenderAnalytics.com",
-            "periodo": "Feb 2025 – Mayo 2025"
+            "periodo": "Febrero 2025 – Mayo 2025"
         }
     ],
     "competencias": [
-        "Power BI",
-        "SQL",
-        "Excel",
-        "Odoo",
-        "Tango Gestión",
-        "Automatización con IA",
-        "Implementación de ERP",
-        "Análisis de datos"
+        {
+            "categoria": "Automatización e integración",
+            "items": ["n8n", "Google Apps Script", "integración mediante API"]
+        },
+        {
+            "categoria": "Sistemas de gestión",
+            "items": ["Odoo", "Tango Gestión"]
+        },
+        {
+            "categoria": "Desarrollo aplicado",
+            "items": ["JavaScript/TypeScript", "SQL", "Python"]
+        },
+        {
+            "categoria": "Información de gestión",
+            "items": ["Excel", "Power BI", "Reportes financieros", "Resultados por obra", "Flujo de fondos proyectado"]
+        }
     ]
 }

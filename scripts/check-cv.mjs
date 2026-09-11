@@ -16,7 +16,16 @@ const cv = JSON.parse(fs.readFileSync(path.join(ROOT, "src", "data", "cv.json"),
 const str = (v, name) =>
   assert.ok(typeof v === "string" && v.trim() !== "", `${name}: falta o está vacío`);
 
-for (const k of ["nombre", "eyebrow", "titulo", "ubicacion", "email", "idiomas", "perfil"]) {
+for (const k of [
+  "nombre",
+  "eyebrow",
+  "titulo",
+  "subtitulo",
+  "ubicacion",
+  "email",
+  "idiomas",
+  "perfil",
+]) {
   str(cv[k], k);
 }
 for (const k of ["linkedin", "github", "cv_pdf"]) {
@@ -50,7 +59,19 @@ insignias.forEach((ins, i) => {
 });
 
 assert.ok(cv.competencias?.length, "competencias: vacío");
-cv.competencias.forEach((c, i) => str(c, `competencias[${i}]`));
+cv.competencias.forEach((grupo, i) => {
+  str(grupo.categoria, `competencias[${i}].categoria`);
+  assert.ok(grupo.items?.length, `competencias[${i}].items: vacío`);
+  grupo.items.forEach((item, j) => str(item, `competencias[${i}].items[${j}]`));
+});
+
+assert.equal(cv.titulo, "Analista de Negocio y Procesos", "titulo profesional inesperado");
+assert.equal(
+  cv.subtitulo,
+  "Contador Público | Automatización e integración de sistemas",
+  "subtitulo profesional inesperado"
+);
+assert.ok(!("proyectos" in cv), "no debe existir una sección de proyectos");
 
 // Los logos de empresas/instituciones viven en el logoMap de cada sección
 // .astro, indexado por el string exacto de empresa/institucion de cv.json.
@@ -80,5 +101,5 @@ warnMissingLogos(cv.cursos, "institucion", path.join("src", "sections", "Courses
 
 console.log(
   `cv.json OK — ${cv.experiencia.length} experiencias, ${cv.formacion.length} formaciones, ` +
-    `${cv.cursos.length} cursos (${insignias.length} insignias), ${cv.competencias.length} competencias`
+    `${cv.cursos.length} cursos (${insignias.length} insignias), ${cv.competencias.length} grupos de competencias`
 );

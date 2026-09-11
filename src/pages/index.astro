@@ -6,16 +6,18 @@ import ProfessionalProfile from '@/sections/ProfessionalProfile.astro'
 import Courses from '@/sections/Courses.astro'
 import Experience from '@/sections/Experience.astro'
 import Skills from '@/sections/Skills.astro'
+import Languages from '@/sections/Languages.astro'
 import cvData from '@/data/cv.json'
 
 const cv = cvData as CvData
 ---
 
-<Layout title=`Cv de ${cv.nombre}`>
+<Layout title=`${cv.nombre} | ${cv.titulo}`>
     <GeneralInfo />
     <ProfessionalProfile />
     <Experience />
+    <Skills />
     <Formation />
     <Courses />
-    <Skills />
+    <Languages />
 </Layout>

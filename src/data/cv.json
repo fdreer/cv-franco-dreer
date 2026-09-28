@@ -1,8 +1,8 @@
 {
     "nombre": "Franco Dreer",
     "eyebrow": "Currículum",
-    "titulo": "Analista de Negocio y Procesos",
-    "subtitulo": "Contador Público | Automatización e integración de sistemas",
+    "titulo": "Contador Público | Gestión y Transformación Digital",
+    "subtitulo": "Consultoría funcional ERP · Automatización de procesos · Análisis de información",
     "ubicacion": "Salta, Argentina",
     "email": "francodreer@gmail.com",
     "idiomas": "Español | Inglés B1",
@@ -11,28 +11,29 @@
         "github": "https://github.com/fdreer",
         "cv_pdf": "/cv.pdf"
     },
-    "perfil": "Contador Público con experiencia en análisis y mejora de procesos administrativos y financieros, automatización e integración de sistemas. Combino conocimiento del negocio y capacidad técnica para identificar necesidades e implementar soluciones con Odoo, Tango Gestión y desarrollos a medida. También cuento con experiencia en capacitación de usuarios y elaboración de información económica y financiera para la gestión.",
+    "perfil": "Contador Público con experiencia en gestión administrativa y contable, consultoría funcional ERP y mejora de procesos. Implementé y parametricé sistemas de gestión, capacité a usuarios y desarrollé automatizaciones, integraciones y reportes para apoyar el trabajo operativo y la toma de decisiones. Combino conocimiento del negocio y capacidad técnica, con experiencia en Tango Gestión, Odoo y Power BI y uso de inteligencia artificial como herramienta para desarrollar soluciones.",
     "experiencia": [
         {
             "rol": "Responsable de Administración y Transformación Digital",
             "empresa": "BIMEG Constructora S.R.L.",
             "periodo": "Diciembre 2025 – Agosto 2026",
             "bullets": [
-                "Automaticé procesos administrativos mediante integraciones entre sistemas y desarrollos a medida, a partir de necesidades operativas de la empresa.",
-                "Configuré y administré Odoo para la gestión administrativa y contable, y capacité a usuarios en su utilización.",
-                "Desarrollé reportes de resultados generales y por obra, y un flujo de fondos proyectado, integrando información de Odoo para apoyar el seguimiento económico y financiero.",
-                "Gestioné procesos operativos, administrativos y contables, incluida la liquidación impositiva de la empresa."
+                "Gestioné procesos administrativos, contables y financieros, incluida la liquidación impositiva.",
+                "Automaticé procesos administrativos y financieros mediante integraciones entre sistemas y desarrollos a medida, reduciendo tareas manuales y mejorando la disponibilidad de información para la gestión.",
+                "Configuré y administré Odoo para la gestión administrativa y contable, trabajé con la información del ERP y capacité a usuarios en su utilización.",
+                "Desarrollé reportes de control de gestión sobre resultados generales, resultados por obra y flujo de fondos proyectado, integrando información de sistemas. Utilicé Power BI como parte de mi trabajo en la empresa."
             ]
         },
         {
-            "rol": "Contador Público y Consultor funcional ERP – Tango Gestión",
+            "rol": "Contador Público y Consultor Funcional ERP",
             "empresa": "Gallo & Dreer Contadores",
             "periodo": "Agosto 2024 – Noviembre 2025",
             "bullets": [
-                "Implementé y parametricé Tango Gestión para clientes, y capacité a usuarios finales en su utilización.",
-                "Desarrollé automatizaciones e integraciones para tareas administrativas, adaptadas a las necesidades de los clientes.",
-                "Asesoré a clientes en el aprovechamiento de su información administrativa y contable para la gestión.",
-                "Gestioné tareas contables y liquidaciones impositivas para una cartera de clientes."
+                "Implementé y parametricé Tango Gestión según los procesos administrativos y contables de diferentes clientes.",
+                "Relevé necesidades operativas y capacité a usuarios finales en la utilización del sistema.",
+                "Desarrollé automatizaciones e integraciones para mejorar tareas administrativas y el acceso a información.",
+                "Implementé Power BI para realizar controles contables e impositivos de clientes del estudio que utilizaban Tango Gestión.",
+                "Gestioné tareas contables e impositivas para una cartera de clientes."
             ]
         },
         {
@@ -63,6 +64,11 @@
         }
     ],
     "cursos": [
+        {
+            "titulo": "Business Analytics",
+            "institucion": "AprenderAnalytics.com",
+            "periodo": "Febrero 2025 – Mayo 2025"
+        },
         {
             "titulo": "Tango Gestión",
             "institucion": "Tango University",
@@ -110,29 +116,24 @@
             "titulo": "Curso de Inglés B1",
             "institucion": "Universidad Católica de Salta",
             "periodo": "Febrero 2020 – Diciembre 2020"
-        },
-        {
-            "titulo": "Business Analytics",
-            "institucion": "AprenderAnalytics.com",
-            "periodo": "Febrero 2025 – Mayo 2025"
         }
     ],
     "competencias": [
+        {
+            "categoria": "Consultoría funcional y procesos",
+            "items": ["Relevamiento de necesidades", "Parametrización de ERP", "Capacitación de usuarios", "Tango Gestión", "Odoo"]
+        },
         {
             "categoria": "Automatización e integración",
             "items": ["n8n", "Google Apps Script"]
         },
         {
-            "categoria": "Sistemas de gestión",
-            "items": ["Odoo", "Tango Gestión"]
+            "categoria": "Análisis y control de gestión",
+            "items": ["Power BI", "Excel", "SQL", "Reportes", "Análisis de información económico-financiera", "Indicadores (KPIs)"]
         },
         {
             "categoria": "Desarrollo aplicado",
-            "items": ["JavaScript/TypeScript", "SQL", "Python"]
-        },
-        {
-            "categoria": "Información de gestión",
-            "items": ["Excel", "Power BI"]
+            "items": ["JavaScript/TypeScript", "Python", "IA como herramienta para desarrollar soluciones"]
         }
     ]
 }

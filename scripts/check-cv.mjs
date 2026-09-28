@@ -65,10 +65,10 @@ cv.competencias.forEach((grupo, i) => {
   grupo.items.forEach((item, j) => str(item, `competencias[${i}].items[${j}]`));
 });
 
-assert.equal(cv.titulo, "Analista de Negocio y Procesos", "titulo profesional inesperado");
+assert.equal(cv.titulo, "Contador Público | Gestión y Transformación Digital", "titulo profesional inesperado");
 assert.equal(
   cv.subtitulo,
-  "Contador Público | Automatización e integración de sistemas",
+  "Consultoría funcional ERP · Automatización de procesos · Análisis de información",
   "subtitulo profesional inesperado"
 );
 assert.ok(!("proyectos" in cv), "no debe existir una sección de proyectos");

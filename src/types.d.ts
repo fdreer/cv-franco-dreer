@@ -33,6 +33,7 @@ type CvData = {
     titulo: string
     subtitulo: string
     ubicacion: string
+    telefono: string
     email: string
     idiomas: string
     links: { linkedin: string; github: string; cv_pdf: string }

@@ -46,6 +46,7 @@ const cv = cvData as CvData
 
         <div class="meta">
             <span>{cv.ubicacion}</span>
+            <a href={`tel:${cv.telefono}`} class="meta-link">{cv.telefono}</a>
             <a href={`mailto:${cv.email}`} class="meta-link">{cv.email}</a>
         </div>
     </section>

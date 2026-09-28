@@ -22,6 +22,7 @@ for (const k of [
   "titulo",
   "subtitulo",
   "ubicacion",
+  "telefono",
   "email",
   "idiomas",
   "perfil",

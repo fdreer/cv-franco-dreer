@@ -45,16 +45,6 @@ const cv = cvData as CvData
                 ))}
             </section>
 
-            <section class="skills">
-                <h2>Competencias técnicas</h2>
-                {cv.competencias.map(({ categoria, items }) => (
-                    <div class="skill-group">
-                        <h3>{categoria}</h3>
-                        <p>{items.join(' · ')}</p>
-                    </div>
-                ))}
-            </section>
-
             <section>
                 <h2>Formación académica</h2>
                 {cv.formacion.map(({ titulo, institucion, periodo }) => (
@@ -73,6 +63,16 @@ const cv = cvData as CvData
                         <p>{institucion} · {periodo}</p>
                         {detalle && <p class="detail">{detalle}</p>}
                     </article>
+                ))}
+            </section>
+
+            <section class="skills">
+                <h2>Competencias técnicas</h2>
+                {cv.competencias.map(({ categoria, items }) => (
+                    <div class="skill-group">
+                        <h3>{categoria}</h3>
+                        <p>{items.join(' · ')}</p>
+                    </div>
                 ))}
             </section>
 

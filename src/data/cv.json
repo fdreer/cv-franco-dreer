@@ -2,17 +2,17 @@
     "nombre": "Franco Dreer",
     "eyebrow": "Currículum",
     "titulo": "Contador Público | Gestión y Transformación Digital",
-    "subtitulo": "Consultoría funcional ERP · Automatización de procesos · Análisis de información",
+    "subtitulo": "Consultoría funcional · Automatización e integración de sistemas · Control de gestión",
     "ubicacion": "Salta, Argentina",
     "telefono": "3874570889",
     "email": "francodreer@gmail.com",
-    "idiomas": "Español | Inglés B1",
+    "idiomas": "Español (nativo) · Inglés B1",
     "links": {
         "linkedin": "https://www.linkedin.com/in/francodreer",
         "github": "https://github.com/fdreer",
         "cv_pdf": "/cv.pdf"
     },
-    "perfil": "Contador Público con experiencia en gestión administrativa y contable, consultoría funcional ERP y mejora de procesos. Implementé y parametricé sistemas de gestión, capacité a usuarios y desarrollé automatizaciones, integraciones y reportes para apoyar el trabajo operativo y la toma de decisiones. Combino conocimiento del negocio y capacidad técnica, con experiencia en Tango Gestión, Odoo y Power BI y uso de inteligencia artificial como herramienta para desarrollar soluciones.",
+    "perfil": "Contador Público, estudiante avanzado de Administración de Empresas y Certified Tech Developer (Digital House). Combino gestión administrativa y financiera, control de gestión y consultoría funcional ERP con desarrollo de soluciones tecnológicas. Implemento sistemas de gestión y desarrollo reportes, automatizaciones e integraciones mediante APIs para mejorar procesos, reducir tareas manuales y apoyar la toma de decisiones. Utilizo inteligencia artificial como apoyo al desarrollo de soluciones.",
     "experiencia": [
         {
             "rol": "Responsable de Administración y Transformación Digital",
@@ -20,9 +20,10 @@
             "periodo": "Diciembre 2025 – Agosto 2026",
             "bullets": [
                 "Gestioné procesos administrativos, contables y financieros, incluida la liquidación impositiva.",
-                "Automaticé procesos administrativos y financieros mediante integraciones entre sistemas y desarrollos a medida, reduciendo tareas manuales y mejorando la disponibilidad de información para la gestión.",
-                "Configuré y administré Odoo para la gestión administrativa y contable, trabajé con la información del ERP y capacité a usuarios en su utilización.",
-                "Desarrollé reportes de control de gestión sobre resultados generales, resultados por obra y flujo de fondos proyectado, integrando información de sistemas. Utilicé Power BI como parte de mi trabajo en la empresa."
+                "Relevé necesidades, mejoré y estandaricé procesos administrativos y capacité a usuarios en el sistema y las mejoras implementadas.",
+                "Configuré y administré Odoo para la gestión administrativa y contable e integré información con otras herramientas mediante su API.",
+                "Desarrollé automatizaciones, integraciones y soluciones a medida para reducir tareas manuales y facilitar el acceso a información administrativa y financiera.",
+                "Desarrollé tableros de control de gestión en Power BI, integrando datos del ERP para analizar resultados generales y por obra y proyectar el flujo de fondos."
             ]
         },
         {
@@ -30,29 +31,24 @@
             "empresa": "Gallo & Dreer Contadores",
             "periodo": "Agosto 2024 – Noviembre 2025",
             "bullets": [
-                "Implementé y parametricé Tango Gestión según los procesos administrativos y contables de diferentes clientes.",
-                "Relevé necesidades operativas y capacité a usuarios finales en la utilización del sistema.",
-                "Desarrollé automatizaciones e integraciones para mejorar tareas administrativas y el acceso a información.",
-                "Implementé Power BI para realizar controles contables e impositivos de clientes del estudio que utilizaban Tango Gestión.",
+                "Relevé necesidades administrativas y contables e implementé y parametricé Tango Gestión para mejorar procesos de diferentes clientes.",
+                "Desarrollé integraciones y automatizaciones mediante la API de Tango Gestión para intercambiar información entre sistemas y reducir tareas manuales.",
+                "Implementé controles contables e impositivos con Power BI a partir de datos de Tango Gestión.",
+                "Capacité y brindé soporte a usuarios del ERP.",
                 "Gestioné tareas contables e impositivas para una cartera de clientes."
             ]
         },
         {
-            "rol": "Auxiliar Contable (pasantía)",
+            "rol": "Auxiliar Contable",
             "empresa": "Santiago Saenz S.A.",
             "periodo": "Enero 2024 – Julio 2024",
             "bullets": [
-                "Realicé conciliaciones de cuentas y brindé soporte operativo al área de administración y finanzas.",
+                "Realicé conciliaciones de cuentas y brindé soporte a administración y finanzas.",
                 "Registré y controlé comprobantes de facturación."
             ]
         }
     ],
     "formacion": [
-        {
-            "titulo": "Licenciatura en Administración de Empresas",
-            "institucion": "Universidad Católica de Salta",
-            "periodo": "Marzo 2026 – Presente"
-        },
         {
             "titulo": "Contador Público",
             "institucion": "Universidad Católica de Salta",
@@ -61,7 +57,13 @@
         {
             "titulo": "Certified Tech Developer",
             "institucion": "Digital House",
-            "periodo": "Febrero 2022 – Septiembre 2023"
+            "periodo": "Febrero 2022 – Septiembre 2023",
+            "detalle": "Formación práctica en desarrollo de software: fundamentos de programación, JavaScript, orientación a objetos con Java, frontend y backend, bases de datos, APIs, testing, Git y metodologías ágiles, con proyectos integradores."
+        },
+        {
+            "titulo": "Licenciatura en Administración de Empresas",
+            "institucion": "Universidad Católica de Salta",
+            "periodo": "Marzo 2026 – Presente"
         }
     ],
     "cursos": [
@@ -74,38 +76,7 @@
             "titulo": "Tango Gestión",
             "institucion": "Tango University",
             "periodo": "Febrero 2024 – Julio 2024",
-            "detalle": "Credenciales: Tango Inicial, Tango Operador, Tango Operador Avanzado, Tango Operador Contable, Técnico Tango, Técnico Tango Avanzado y Tango Consultor.",
             "insignias": [
-                {
-                    "titulo": "Tango Inicial",
-                    "src": "/src/assets/tango_insignia/Tango_Inicial.png",
-                    "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=91f2483e21d45c1266176d2b6e4d6cdb7be62ccd"
-                },
-                {
-                    "titulo": "Tango Operador",
-                    "src": "/src/assets/tango_insignia/Tango_Operador.png",
-                    "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=ba016d1c04842cbf2824e311e8e500d72b38b906"
-                },
-                {
-                    "titulo": "Tango Operador Avanzado",
-                    "src": "/src/assets/tango_insignia/Tango_Operador_Avanzado.png",
-                    "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=32fa5ea47c72f72500dedb8b58372ebcde4d69bb"
-                },
-                {
-                    "titulo": "Tango Operador Contable",
-                    "src": "/src/assets/tango_insignia/Tango_Operador_Contable.png",
-                    "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=1a51c394a8806d92e53ccaadfe149ba746cfb8a9"
-                },
-                {
-                    "titulo": "Técnico Tango",
-                    "src": "/src/assets/tango_insignia/Tecnico_Tango.png",
-                    "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=4cc1da77160afe161f53a59bde97901edae4ce1e"
-                },
-                {
-                    "titulo": "Técnico Tango Avanzado",
-                    "src": "/src/assets/tango_insignia/Tecnico_Tango_Avanzado.png",
-                    "href": "https://tangouniversity.axoft.com/badges/badge.php?hash=437873f6d91c1bd7a10d0c986a97d0ea87b4cfe3"
-                },
                 {
                     "titulo": "Tango Consultor",
                     "src": "/src/assets/tango_insignia/Tango_Consultor.png",
@@ -121,20 +92,20 @@
     ],
     "competencias": [
         {
-            "categoria": "Consultoría funcional y procesos",
-            "items": ["Relevamiento de necesidades", "Parametrización de ERP", "Capacitación de usuarios", "Tango Gestión", "Odoo"]
+            "categoria": "Desarrollo y datos",
+            "items": ["JavaScript/TypeScript", "SQL", "Git/GitHub"]
         },
         {
             "categoria": "Automatización e integración",
-            "items": ["n8n", "Google Apps Script"]
+            "items": ["n8n", "Google Apps Script", "APIs REST", "IA"]
         },
         {
-            "categoria": "Análisis y control de gestión",
-            "items": ["Power BI", "Excel", "SQL", "Reportes", "Análisis de información económico-financiera", "Indicadores (KPIs)"]
+            "categoria": "Consultoría funcional",
+            "items": ["Odoo", "Tango Gestión"]
         },
         {
-            "categoria": "Desarrollo aplicado",
-            "items": ["JavaScript/TypeScript", "Python", "IA como herramienta para desarrollar soluciones"]
+            "categoria": "Análisis de datos",
+            "items": ["Power BI", "Power Query", "Excel"]
         }
     ]
 }

@@ -8,7 +8,7 @@ const cv = cvData as CvData
 <Container>
     <section class="data">
         <h2>Perfil profesional</h2>
-        <p>{cv.perfil}</p>
+        {cv.perfil.split('\n\n').map(parrafo => <p>{parrafo}</p>)}
     </section>
 </Container>
 
@@ -17,5 +17,8 @@ const cv = cvData as CvData
         font-size: 1rem;
         color: var(--color-text);
         line-height: 1.7;
+    }
+    p + p {
+        margin-top: 0.75rem;
     }
 </style>

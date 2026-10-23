@@ -18,7 +18,7 @@ const logoMap: Record<string, ImageMetadata> = {
 		<h2>Formación</h2>
 		<ul>
 			{
-				cv.formacion.map(({ titulo, institucion, periodo }) => (
+				cv.formacion.map(({ titulo, institucion, periodo, detalle }) => (
 					<li>
 						<div class="institution-icon">
 							{logoMap[institucion]
@@ -30,6 +30,7 @@ const logoMap: Record<string, ImageMetadata> = {
 							<h3 class="degree-title">{titulo}</h3>
 							<span class="institution">{institucion}</span>
 							<span class="date">{periodo}</span>
+							{detalle && <p class="detail">{detalle}</p>}
 						</div>
 					</li>
 				))
@@ -90,7 +91,8 @@ const logoMap: Record<string, ImageMetadata> = {
 
 	.institution {
 		font-size: 0.9rem;
-		color: var(--color-text);
+		color: var(--color-accent);
+		font-weight: 600;
 	}
 
 	.date {
@@ -101,6 +103,13 @@ const logoMap: Record<string, ImageMetadata> = {
 		letter-spacing: 0.04em;
 		font-weight: 500;
 		margin-top: 2px;
+	}
+
+	.detail {
+		margin-top: 0.5rem;
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: var(--color-text);
 	}
 
 	.logo-img {

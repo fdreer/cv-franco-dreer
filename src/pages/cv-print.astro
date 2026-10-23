@@ -1,5 +1,6 @@
 ---
 import cvData from '@/data/cv.json'
+import Insignia from '@/components/Insignia.astro'
 
 const cv = cvData as CvData
 ---
@@ -22,58 +23,96 @@ const cv = cvData as CvData
                     <span>{cv.ubicacion}</span>
                     <a href={`tel:${cv.telefono}`}>{cv.telefono}</a>
                     <a href={`mailto:${cv.email}`}>{cv.email}</a>
-                    <a href={cv.links.linkedin}>LinkedIn: linkedin.com/in/francodreer</a>
+                    <a href={cv.links.linkedin}
+                        >LinkedIn: linkedin.com/in/francodreer</a
+                    >
                     <a href={cv.links.github}>GitHub: github.com/fdreer</a>
                 </address>
             </header>
 
             <section>
                 <h2>Perfil profesional</h2>
-                <p>{cv.perfil}</p>
+                {cv.perfil.split('\n\n').map(parrafo => <p>{parrafo}</p>)}
             </section>
 
             <section>
                 <h2>Experiencia laboral</h2>
-                {cv.experiencia.map(({ rol, empresa, periodo, bullets }) => (
-                    <article class="experience">
-                        <h3>{rol}</h3>
-                        <p class="meta"><strong>{empresa}</strong> · {periodo}</p>
-                        <ul>
-                            {bullets.map(bullet => <li>{bullet}</li>)}
-                        </ul>
-                    </article>
-                ))}
+                {
+                    cv.experiencia.map(({ rol, empresa, periodo, bullets }) => (
+                        <article class="experience">
+                            <h3>{rol}</h3>
+                            <p class="meta">
+                                <strong>{empresa}</strong> · {periodo}
+                            </p>
+                            <ul>
+                                {bullets.map(bullet => (
+                                    <li>{bullet}</li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))
+                }
             </section>
 
-            <section>
+            <section class="formation">
                 <h2>Formación académica</h2>
-                {cv.formacion.map(({ titulo, institucion, periodo }) => (
-                    <article class="education">
-                        <h3>{titulo}</h3>
-                        <p>{institucion} · {periodo}</p>
-                    </article>
-                ))}
+                {
+                    cv.formacion.map(
+                        ({ titulo, institucion, periodo, detalle }) => (
+                            <article class="education">
+                                <h3>{titulo}</h3>
+                                <p class="meta">
+                                    <strong>{institucion}</strong> · {periodo}
+                                </p>
+                                {detalle && <p class="detail">{detalle}</p>}
+                            </article>
+                        )
+                    )
+                }
             </section>
 
             <section>
                 <h2>Certificaciones y formación complementaria</h2>
-                {cv.cursos.map(({ titulo, institucion, periodo, detalle }) => (
-                    <article class="education">
-                        <h3>{titulo}</h3>
-                        <p>{institucion} · {periodo}</p>
-                        {detalle && <p class="detail">{detalle}</p>}
-                    </article>
-                ))}
+                {
+                    cv.cursos.map(
+                        ({
+                            titulo,
+                            institucion,
+                            periodo,
+                            detalle,
+                            insignias
+                        }) => (
+                            <article class="education">
+                                <h3>{titulo}</h3>
+                                <p class="meta">
+                                    <strong>{institucion}</strong> · {periodo}
+                                </p>
+                                {detalle && <p class="detail">{detalle}</p>}
+                                {insignias?.map(({ titulo, src, href }) => (
+                                    <div class="badge">
+                                        <Insignia
+                                            imagePath={src}
+                                            href={href}
+                                            altText={titulo}
+                                        />
+                                    </div>
+                                ))}
+                            </article>
+                        )
+                    )
+                }
             </section>
 
             <section class="skills">
                 <h2>Competencias técnicas</h2>
-                {cv.competencias.map(({ categoria, items }) => (
-                    <div class="skill-group">
-                        <h3>{categoria}</h3>
-                        <p>{items.join(' · ')}</p>
-                    </div>
-                ))}
+                {
+                    cv.competencias.map(({ categoria, items }) => (
+                        <div class="skill-group">
+                            <h3>{categoria}</h3>
+                            <p>{items.join(' · ')}</p>
+                        </div>
+                    ))
+                }
             </section>
 
             <section>
@@ -194,6 +233,10 @@ const cv = cvData as CvData
                 margin-bottom: 0;
             }
 
+            section > p + p {
+                margin-top: 2mm;
+            }
+
             .experience {
                 break-inside: avoid;
                 margin-bottom: 3.5mm;
@@ -252,7 +295,11 @@ const cv = cvData as CvData
 
             .education {
                 break-inside: avoid;
-                margin-bottom: 2.5mm;
+                margin-bottom: 3.5mm;
+            }
+
+            .formation {
+                break-inside: avoid;
             }
 
             .education:last-child {
@@ -262,6 +309,17 @@ const cv = cvData as CvData
             .education p {
                 color: var(--muted);
                 font-size: 9.5pt;
+            }
+
+            .education .meta {
+                color: var(--accent);
+                margin-bottom: 1.5mm;
+            }
+
+            .badge img {
+                display: block;
+                width: 70px;
+                height: 70px;
             }
 
             .education .detail {
@@ -289,10 +347,6 @@ const cv = cvData as CvData
                 header,
                 h2 {
                     break-after: avoid;
-                }
-
-                .skills {
-                    break-before: page;
                 }
             }
         </style>

@@ -9,6 +9,7 @@ type CvFormacion = {
     titulo: string
     institucion: string
     periodo: string
+    detalle?: string
 }
 
 type CvInsignia = {

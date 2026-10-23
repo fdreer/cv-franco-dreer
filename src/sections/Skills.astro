@@ -7,14 +7,16 @@ const cv = cvData as CvData
 
 <Container>
     <section class="data">
-        <h2>Competencias</h2>
+        <h2>Competencias técnicas</h2>
         <div class="skill-groups">
-            {cv.competencias.map(({ categoria, items }) => (
-                <article class="skill-group">
-                    <h3>{categoria}</h3>
-                    <p>{items.join(' · ')}</p>
-                </article>
-            ))}
+            {
+                cv.competencias.map(({ categoria, items }) => (
+                    <article class="skill-group">
+                        <h3>{categoria}</h3>
+                        <p>{items.join(' · ')}</p>
+                    </article>
+                ))
+            }
         </div>
     </section>
 </Container>

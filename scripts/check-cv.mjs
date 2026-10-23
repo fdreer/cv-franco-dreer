@@ -48,6 +48,7 @@ for (const seccion of ["formacion", "cursos"]) {
     str(f.titulo, `${seccion}[${i}].titulo`);
     str(f.institucion, `${seccion}[${i}].institucion`);
     str(f.periodo, `${seccion}[${i}].periodo`);
+    if (f.detalle !== undefined) str(f.detalle, `${seccion}[${i}].detalle`);
   });
 }
 
@@ -69,10 +70,20 @@ cv.competencias.forEach((grupo, i) => {
 assert.equal(cv.titulo, "Contador Público | Gestión y Transformación Digital", "titulo profesional inesperado");
 assert.equal(
   cv.subtitulo,
-  "Consultoría funcional ERP · Automatización de procesos · Análisis de información",
+  "Consultoría funcional · Automatización e integración de sistemas · Control de gestión",
   "subtitulo profesional inesperado"
 );
 assert.ok(!("proyectos" in cv), "no debe existir una sección de proyectos");
+assert.deepEqual(cv.formacion.map(({ titulo }) => titulo), [
+  "Contador Público", "Certified Tech Developer", "Licenciatura en Administración de Empresas",
+], "orden de formación inesperado");
+str(cv.formacion[1].detalle, "formación Certified Tech Developer: falta descripción");
+assert.deepEqual(insignias.map(({ titulo }) => titulo), ["Tango Consultor"], "debe mostrarse solo la insignia Tango Consultor");
+assert.equal(cv.cursos.find(({ titulo }) => titulo === "Tango Gestión")?.detalle, undefined, "Tango Gestión no debe repetir la lista de credenciales");
+assert.deepEqual(cv.competencias.map(({ categoria }) => categoria), [
+  "Desarrollo y datos", "Automatización e integración", "Consultoría funcional", "Análisis de datos",
+], "categorías de competencias inesperadas");
+assert.ok(!cv.competencias.some(({ items }) => items.some(item => /python/i.test(item))), "Python no debe figurar como competencia");
 
 // Los logos de empresas/instituciones viven en el logoMap de cada sección
 // .astro, indexado por el string exacto de empresa/institucion de cv.json.

@@ -20,7 +20,6 @@ for (const k of [
   "nombre",
   "eyebrow",
   "titulo",
-  "subtitulo",
   "ubicacion",
   "telefono",
   "email",
@@ -68,11 +67,6 @@ cv.competencias.forEach((grupo, i) => {
 });
 
 assert.equal(cv.titulo, "Contador Público | Gestión y Transformación Digital", "titulo profesional inesperado");
-assert.equal(
-  cv.subtitulo,
-  "Consultoría funcional · Automatización e integración de sistemas · Control de gestión",
-  "subtitulo profesional inesperado"
-);
 assert.ok(!("proyectos" in cv), "no debe existir una sección de proyectos");
 assert.deepEqual(cv.formacion.map(({ titulo }) => titulo), [
   "Contador Público", "Certified Tech Developer", "Licenciatura en Administración de Empresas",

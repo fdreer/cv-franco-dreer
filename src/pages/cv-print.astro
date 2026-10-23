@@ -1,5 +1,6 @@
 ---
 import cvData from '@/data/cv.json'
+import myPhoto from '@/assets/img/foto.jpeg'
 import Insignia from '@/components/Insignia.astro'
 
 const cv = cvData as CvData
@@ -16,9 +17,15 @@ const cv = cvData as CvData
     <body>
         <main class="cv">
             <header>
+                <img
+                    class="photo"
+                    src={myPhoto.src}
+                    alt={`Foto 4x4 de ${cv.nombre}`}
+                    width="96"
+                    height="96"
+                />
                 <h1>{cv.nombre}</h1>
                 <p class="role">{cv.titulo}</p>
-                <p class="subtitle">{cv.subtitulo}</p>
                 <address class="contact">
                     <span>{cv.ubicacion}</span>
                     <a href={`tel:${cv.telefono}`}>{cv.telefono}</a>
@@ -26,7 +33,6 @@ const cv = cvData as CvData
                     <a href={cv.links.linkedin}
                         >LinkedIn: linkedin.com/in/francodreer</a
                     >
-                    <a href={cv.links.github}>GitHub: github.com/fdreer</a>
                 </address>
             </header>
 
@@ -162,6 +168,15 @@ const cv = cvData as CvData
                 border-bottom: 2px solid var(--accent);
                 padding-bottom: 4mm;
                 margin-bottom: 5mm;
+            }
+
+            .photo {
+                float: right;
+                width: 96px;
+                height: 96px;
+                margin-left: 1.5rem;
+                border-radius: 50%;
+                object-fit: cover;
             }
 
             h1 {

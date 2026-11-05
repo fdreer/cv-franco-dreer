@@ -11,18 +11,18 @@
         "github": "https://github.com/fdreer",
         "cv_pdf": "/cv.pdf"
     },
-    "perfil": "Contador Público, estudiante avanzado de Administración de Empresas y Certified Tech Developer (Digital House). Combino experiencia en gestión administrativa, control de gestión y consultoría funcional con tecnología para mejorar y estandarizar procesos. Implemento sistemas de gestión, automatizaciones, integraciones mediante APIs y tableros de control para facilitar la toma de decisiones, utilizando inteligencia artificial como herramienta de apoyo.",
+    "perfil": "Profesional con experiencia en administración, contabilidad, impuestos, finanzas y control de gestión, junto con consultoría funcional en Tango Gestión y Odoo. Contador Público y Certified Tech Developer, orientado a la mejora de procesos mediante automatizaciones, integraciones y desarrollo de software a medida.",
     "experiencia": [
         {
             "rol": "Responsable de Administración y Transformación Digital",
             "empresa": "BIMEG Constructora S.R.L.",
             "periodo": "Diciembre 2025 – Agosto 2026",
             "bullets": [
-                "Gestioné procesos administrativos, contables y financieros, incluyendo liquidaciones impositivas.",
-                "Relevé necesidades, mejoré y estandaricé procesos administrativos y capacité a usuarios.",
-                "Configuré y administré Odoo e integré información con otras herramientas mediante su API.",
-                "Desarrollé automatizaciones y soluciones a medida para reducir tareas manuales y mejorar el acceso a la información.",
-                "Desarrollé tableros de control de gestión en Power BI con indicadores financieros y operativos para la toma de decisiones."
+                "Gestioné procesos administrativos y financieros, incluyendo pagos, cobranzas, bancos, cuentas corrientes, costos y presupuestos.",
+                "Realicé cierres contables, cálculo y liquidación de impuestos y presentación de declaraciones juradas.",
+                "Realicé control de gestión mediante indicadores y métricas comerciales y operativas.",
+                "Brindé consultoría funcional en Odoo, relevé necesidades, estandaricé procesos y capacité a usuarios.",
+                "Desarrollé automatizaciones, integraciones mediante APIs y soluciones de software a medida."
             ]
         },
         {
@@ -30,11 +30,11 @@
             "empresa": "Gallo & Dreer Contadores",
             "periodo": "Agosto 2024 – Noviembre 2025",
             "bullets": [
-                "Relevé necesidades, implementé y parametricé Tango Gestión para mejorar procesos de distintos clientes.",
-                "Desarrollé integraciones y automatizaciones mediante la API de Tango Gestión.",
-                "Implementé controles contables e impositivos con Power BI.",
-                "Capacité y brindé soporte a usuarios del ERP.",
-                "Gestioné tareas contables e impositivas para una cartera de clientes."
+                "Realicé cierres contables, liquidaciones impositivas y presentación de declaraciones juradas para una cartera de clientes.",
+                "Brindé consultoría funcional en Tango Gestión, incluyendo implementación y parametrización.",
+                "Desarrollé automatizaciones e integraciones aplicadas a los procesos del estudio.",
+                "Implementé y automaticé controles contables e impositivos y elaboré reportes en Power BI.",
+                "Capacité y brindé soporte a usuarios del sistema de gestión."
             ]
         },
         {
@@ -42,7 +42,7 @@
             "empresa": "Santiago Saenz S.A.",
             "periodo": "Enero 2024 – Julio 2024",
             "bullets": [
-                "Realicé conciliaciones, registré y controlé comprobantes de facturación y brindé soporte a administración y finanzas."
+                "Realicé conciliaciones, registré y controlé comprobantes y brindé soporte a administración y finanzas."
             ]
         }
     ],

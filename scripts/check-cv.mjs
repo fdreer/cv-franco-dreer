@@ -20,7 +20,6 @@ for (const k of [
   "nombre",
   "eyebrow",
   "titulo",
-  "ubicacion",
   "telefono",
   "email",
   "idiomas",

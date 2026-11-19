@@ -32,7 +32,6 @@ type CvData = {
     nombre: string
     eyebrow: string
     titulo: string
-    ubicacion: string
     telefono: string
     email: string
     idiomas: string

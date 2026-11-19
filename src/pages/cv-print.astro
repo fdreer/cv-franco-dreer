@@ -27,7 +27,6 @@ const cv = cvData as CvData
                 <h1>{cv.nombre}</h1>
                 <p class="role">{cv.titulo}</p>
                 <address class="contact">
-                    <span>{cv.ubicacion}</span>
                     <a href={`tel:${cv.telefono}`}>{cv.telefono}</a>
                     <a href={`mailto:${cv.email}`}>{cv.email}</a>
                     <a href={cv.links.linkedin}
